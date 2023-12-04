@@ -1,0 +1,25 @@
+:root {
+/*  */
+/*  */
+
+--width: 1440px;
+--width-block: 1168px;
+--height90: 90px;
+--height120: 120px;
+--height270: 270px; 
+--height310: 310px; 
+--height395: 395px; 
+--height420: 420px; 
+--height480: 480px; 
+--color-white: #fff;
+--color-black: #000;
+--color-purple: #6A1B9A;
+--color-gray: #646464;
+--color-blue-gray: #90A4AE;
+--color-light-gray: #EDEDED;
+--color-gradient-purple: linear-gradient(101deg, #FEE1F7 0%, #D69FF7 97.41%);
+--color-transparent5: rgba(255, 255, 255, 0.50);
+--color-purple-transparent3: rgba(106, 27, 154, 0.30);
+    /*  */
+    /*  */
+}
