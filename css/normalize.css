@@ -23,7 +23,7 @@ body {
 }
 
 a {
-    text-decoration: none !important;
+    text-decoration: none;
     color: var(--black);
 }
 a:focus, a:hover{

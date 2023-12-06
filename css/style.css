@@ -75,35 +75,6 @@
   text-transform: uppercase;
 }
 
-.buttonPurple {
-  display: inline-flex;
-  padding: 18px 32px;
-  align-items: center;
-  gap: 10px;
-  border-radius: 10px;
-  background: var(--color-purple);
-}
-
-.buttonWhite {
-  width: 110px;
-  height: 36px;
-  background: var(--color-white);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-}
-
-.buttonTransparent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-transform: uppercase;
-  width: 227px;
-  height: 64px;
-  background: rgba(255, 255, 255, 0.5);
-}
-
 .purple {
   color: var(--color-purple);
 }
@@ -135,6 +106,37 @@
 .white {
   color: var(--color-white);
 }
+
+.buttonPurple {
+  display: inline-flex;
+  padding: 18px 32px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  background: var(--color-purple);
+}
+
+.buttonWhite {
+  width: 110px;
+  height: 36px;
+  background: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.buttonTransparent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  width: 227px;
+  height: 64px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+
 
 /*  */
 
@@ -211,6 +213,16 @@
 
 .header_links {
   gap: 30px;
+}
+
+.header_links a {
+  border-top: solid 2px var(--color-transparent);
+  border-bottom: solid 2px var(--color-transparent);
+  padding: 6px 0;
+}
+
+.header_links a:hover {
+ border-bottom: solid 2px var(--color-purple);
 }
 
 .header_right {
@@ -379,6 +391,33 @@
 
 .catalog_left a {
   margin-top: 30px;
+}
+
+.catalog_ref {
+  padding: 8px 0;
+  border-bottom: solid 2px var(--color-white);
+  display: inline-block;
+  width: fit-content;
+}
+
+.catalog_ref div {
+ width: 100%;
+}
+
+.catalog_ref div:hover {
+ color: var(--color-purple);
+}
+
+.catalog_ref:hover {
+  border-bottom: solid 2px var(--color-purple);
+}
+
+/* .catalog_ref:hover .title18 {
+  color: var(--color-purple);
+} */
+
+.catalog_ref:hover .sliderTitle {
+  color: var(--color-purple);
 }
 
 .popularSection {
