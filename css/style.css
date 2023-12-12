@@ -33,6 +33,11 @@
   font-weight: 500;
 }
 
+.title28 {
+  font-size: 28px;
+  font-weight: 500;
+}
+
 .title32 {
   font-size: 32px;
   font-weight: 600;
@@ -108,6 +113,7 @@
 }
 
 .buttonPurple {
+  cursor: pointer;
   display: inline-flex;
   padding: 18px 32px;
   align-items: center;
@@ -117,6 +123,7 @@
 }
 
 .buttonWhite {
+  cursor: pointer;
   width: 110px;
   height: 36px;
   background: var(--color-white);
@@ -127,6 +134,7 @@
 }
 
 .buttonTransparent {
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,8 +143,6 @@
   height: 64px;
   background: rgba(255, 255, 255, 0.5);
 }
-
-
 
 /*  */
 
@@ -222,7 +228,7 @@
 }
 
 .header_links a:hover {
- border-bottom: solid 2px var(--color-purple);
+  border-bottom: solid 2px var(--color-purple);
 }
 
 .header_right {
@@ -401,11 +407,11 @@
 }
 
 .catalog_ref div {
- width: 100%;
+  width: 100%;
 }
 
 .catalog_ref div:hover {
- color: var(--color-purple);
+  color: var(--color-purple);
 }
 
 .catalog_ref:hover {
@@ -430,7 +436,6 @@
 }
 .popularBlock {
   width: var(--width-block);
-  
 }
 
 .popular_item {
@@ -444,11 +449,9 @@
   transition: all 0.3s ease-in-out;
 }
 
-.popular_img:hover .popularButtonTransparent{
+.popular_img:hover .popularButtonTransparent {
   opacity: 1;
 }
-
-
 
 .popularButtonTransparent .buttonTransparent {
   width: 270px;
@@ -478,4 +481,141 @@
   gap: 30px;
   width: 100%;
   margin-bottom: 60px;
+}
+
+.categorySection {
+  display: flex;
+  flex-direction: row;
+  margin: 80px 0;
+  padding: 0 135px;
+  gap: 80px;
+}
+
+.leftNavMenu {
+  display: flex;
+  flex-direction: column;
+  /* gap: 24px; */
+  width: 220px;
+}
+
+/*  */
+/* Открываем контейнер со ссылками при наличии класса "show" */
+
+.dropbtn {
+  cursor: pointer;
+  padding: 12px 0;
+}
+.dropdown-content.show {
+  display: flex;
+}
+
+/* Скрываем контейнер со ссылками по умолчанию */
+.dropdown-content {
+  display: none;
+  flex-direction: column;
+  /* gap: 24px; */
+}
+
+.dropdown-content a {
+  padding: 12px 0;
+}
+.dropdown-content a:hover {
+  padding: 12px 0;
+  color: var(--color-purple);
+}
+
+/* Добавляем margin-top для элементов под раскрывающимся списком */
+.other-elements {
+  transition: margin-top 0.3s ease; /* Добавляем плавное изменение margin-top */
+}
+
+/* Опционально, стили для красивого отображения */
+.container {
+  position: relative;
+  /* padding: 20px; */
+}
+
+.dropdown {
+  /* margin-bottom: 20px; */
+}
+
+.itemsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.itemsBlock {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 30px;
+}
+.itemSection {
+  display: flex;
+  flex-direction: row;
+  margin: 80px 0;
+  padding: 0 135px;
+  gap: 80px;
+}
+.itemBlock {
+  display: flex;
+  gap: 30px;
+}
+
+.itemSmall_imgs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.item_img,
+.item_small_img {
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.item_img {
+  width: 469px;
+  height: 596px;
+}
+.item_small_img {
+  width: 69px;
+  height: 69px;
+}
+.item_img img,
+.item_small_img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.itemTags {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.itemButtons {
+  display: flex;
+  gap: 16px;
+}
+
+.itemButton {
+  border-radius: 10px;
+  border: 1px solid var(--color-purple);
+  width: 190px;
+  height: 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.itemButton:hover {
+  background: var(--color-purple);
+  color: var(--color-white);
 }
