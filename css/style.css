@@ -8,7 +8,6 @@
   font-size: 12px;
   letter-spacing: 0.24px;
   line-height: 18px;
-  text-transform: uppercase;
 }
 
 .title16 {
@@ -108,10 +107,6 @@
   width: 25%;
 }
 
-.white {
-  color: var(--color-white);
-}
-
 .buttonPurple {
   cursor: pointer;
   display: inline-flex;
@@ -143,7 +138,14 @@
   height: 64px;
   background: rgba(255, 255, 255, 0.5);
 }
-
+.row {
+display: flex;
+flex-direction: row;
+}
+.column {
+display: flex;
+flex-direction: column;
+}
 /*  */
 
 .swiper {
@@ -151,12 +153,14 @@
   height: 690px;
   overflow: hidden;
 }
+
 .popular_swiper {
   width: 100%;
   height: 480px;
   overflow: hidden;
   /* position: relative; */
 }
+
 .swiper-slide {
   display: flex;
   justify-content: center;
@@ -303,6 +307,7 @@
   /* width: 370px; */
   height: var(--height395);
 }
+
 .popular_img {
   width: 270px;
   height: var(--height310);
@@ -420,7 +425,9 @@
 
 /* .catalog_ref:hover .title18 {
   color: var(--color-purple);
-} */
+
+}
+ */
 
 .catalog_ref:hover .sliderTitle {
   color: var(--color-purple);
@@ -434,6 +441,7 @@
   padding: 0 135px;
   position: relative;
 }
+
 .popularBlock {
   width: var(--width-block);
 }
@@ -457,6 +465,7 @@
   width: 270px;
   transition: all 0.3s ease-in-out;
 }
+
 .popularButtonTransparent .buttonTransparent:hover {
   background: rgba(106, 27, 154, 0.3);
   color: var(--color-white);
@@ -471,6 +480,7 @@
 
 .price {
   display: flex;
+  align-items: center;
   gap: 16px;
 }
 
@@ -494,49 +504,40 @@
 .leftNavMenu {
   display: flex;
   flex-direction: column;
-  /* gap: 24px; */
   width: 220px;
 }
 
 /*  */
-/* Открываем контейнер со ссылками при наличии класса "show" */
 
 .dropbtn {
   cursor: pointer;
   padding: 12px 0;
 }
+
 .dropdown-content.show {
   display: flex;
 }
 
-/* Скрываем контейнер со ссылками по умолчанию */
 .dropdown-content {
   display: none;
   flex-direction: column;
-  /* gap: 24px; */
 }
 
 .dropdown-content a {
   padding: 12px 0;
 }
+
 .dropdown-content a:hover {
   padding: 12px 0;
   color: var(--color-purple);
 }
 
-/* Добавляем margin-top для элементов под раскрывающимся списком */
 .other-elements {
-  transition: margin-top 0.3s ease; /* Добавляем плавное изменение margin-top */
+  transition: margin-top 0.3s ease; 
 }
 
-/* Опционально, стили для красивого отображения */
 .container {
   position: relative;
-  /* padding: 20px; */
-}
-
-.dropdown {
-  /* margin-bottom: 20px; */
 }
 
 .itemsSection {
@@ -552,13 +553,15 @@
   width: 100%;
   gap: 30px;
 }
+
 .itemSection {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 80px 0;
   padding: 0 135px;
   gap: 80px;
 }
+
 .itemBlock {
   display: flex;
   gap: 30px;
@@ -577,26 +580,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
+
 .item_img {
   width: 469px;
   height: 596px;
 }
+
 .item_small_img {
   width: 69px;
   height: 69px;
 }
+
 .item_img img,
 .item_small_img img {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-.itemTags {
+
+.itemInfo {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
+
 .itemButtons {
   display: flex;
   gap: 16px;
@@ -619,3 +628,59 @@
   background: var(--color-purple);
   color: var(--color-white);
 }
+
+.itemColors {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.itemColor {
+  display: flex;
+  gap: 16px;
+}
+
+.sizeButton {
+  border-radius: 20px;
+  border: 1px solid var(--color-purple);
+  width: 69px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease-in-out;
+}
+
+.sizeButton:hover {
+  background: var(--color-purple3);
+  /* color: var(--color-white); */
+}
+.itemTags {
+display: flex;
+gap: 8px;
+}
+
+.itemTagButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 94px;
+  height: 24px;
+  border-radius: 5px;
+  background: rgba(236, 239, 241, 0.72);
+  border: solid 1px #cfd8dc;
+  font-size: 12px;
+  color: var(--color-blue-gray);
+  text-align: center;
+  padding: 6px 6px 8px 6px;
+}
+
+.itemDescription {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  /* width: 900px; */
+}
+

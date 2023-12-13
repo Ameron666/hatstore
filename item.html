@@ -25,67 +25,476 @@
     <main>
         <header></header>
 
-        
 
-<section class="itemSection">
-    <div class="leftNavMenu">
-        <div class="dropdown" id="dropdown1">
 
-            <div class="dropbtn title16 fw5">Женская коллекция</div>
-            <div class="dropdown-content">
-                <a href="#">Показать все</a>
-                <a href="#">Осень-Зима 2020/21</a>
-                <a href="#">Весна-Лето 2020</a>
-                <a href="#">Шапки</a>
-                <a href="#">Комплекты</a>
+        <section class="itemSection">
+
+            <!-- 
+            <div class="leftNavMenu">
+                <div class="dropdown" id="dropdown1">
+
+                    <div class="dropbtn title16 fw5">Женская коллекция</div>
+                    <div class="dropdown-content">
+                        <a href="#">Показать все</a>
+                        <a href="#">Осень-Зима 2020/21</a>
+                        <a href="#">Весна-Лето 2020</a>
+                        <a href="#">Шапки</a>
+                        <a href="#">Комплекты</a>
+                    </div>
+                </div>
+
+                <div class="dropdown" id="dropdown2">
+                    <div class="dropbtn title16 fw5">Мужская коллекция</div>
+                    <div class="dropdown-content">
+                        <a href="#">Ссылка 4</a>
+                        <a href="#">Ссылка 5</a>
+                        <a href="#">Ссылка 6</a>
+                    </div>
+                </div>
+
+                <div class="dropdown" id="dropdown2">
+                    <div class="dropbtn title16 fw5">Детская коллекция</div>
+                    <div class="dropdown-content">
+                        <a href="#">Ссылка 4</a>
+                        <a href="#">Ссылка 5</a>
+                        <a href="#">Ссылка 6</a>
+                    </div>
+                </div>
+
+                <a href="" class="dropbtn title16 fw5">Новинки</a>
+
+                <a href="" class="dropbtn title16 fw5">Скидки</a>
+
+
             </div>
-        </div>
+             -->
 
-        <div class="dropdown" id="dropdown2">
-            <div class="dropbtn title16 fw5">Мужская коллекция</div>
-            <div class="dropdown-content">
-                <a href="#">Ссылка 4</a>
-                <a href="#">Ссылка 5</a>
-                <a href="#">Ссылка 6</a>
+            <div class="itemBlock">
+                <div class="item_img"><img src="ref/blond2.png" alt="" id="item_big_img"></div>
+                <div class="itemSmall_imgs">
+                    <div class="item_small_img"><img src="ref/blond2.png" alt=""
+                            onclick="changeImage('ref/blond2.png')"></div>
+                    <div class="item_small_img"><img src="ref/blond3.png" alt=""
+                            onclick="changeImage('ref/blond3.png')"></div>
+                    <div class="item_small_img"><img src="ref/blond4.png" alt=""
+                            onclick="changeImage('ref/blond4.png')"></div>
+                    <div class="item_small_img"><img src="ref/blond5.png" alt=""
+                            onclick="changeImage('ref/blond5.png')"></div>
+                </div>
+                <div class="itemInfo">
+                    <div class="itemTags">
+                        <div class="itemTagButton">хит продаж</div>
+                        <div class="itemTagButton">скидка</div>
+                    </div>
+                    <div class="title24 fw6 up" id="item_name">Шапка SHAPKISTORE «Serenity»</div>
+                    <div class="title12 fw4 gray" id="item_vendor">Арт. YC818</div>
+                    <div class="price">
+                        <div class="title28 fw6" id="item_price">1 000 ₽ </div>
+                        <div class="title16 fw4 discount" id="item_price_discount">1 500 ₽</div>
+                    </div>
+
+                    <div class="itemColors">
+                        <div class="itemColor">
+                            <div class="title16 fw5">Цвет:</div>
+                            <div class="title16 fw3">Чёрный</div>
+                        </div>
+                        <div class="itemColor">
+                            . . . .
+                        </div>
+                    </div>
+                    <div class="itemColors">
+                        <div class="title16 fw5">Размер:</div>
+                        <div class="itemColor">
+                            <div class="sizeButton">52-54</div>
+                            <div class="sizeButton">54-56</div>
+                            <div class="sizeButton">56-58</div>
+                        </div>
+                        <a href="" class="title12 fw4 gray">справка размеров</a>
+                    </div>
+                    <div class="itemButtons">
+                        <div class="itemButton">Добавить в корзину</div>
+                        <div class="itemButton">Купить в один клик</div>
+                    </div>
+
+                </div>
             </div>
-        </div>
 
-        <div class="dropdown" id="dropdown2">
-            <div class="dropbtn title16 fw5">Детская коллекция</div>
-            <div class="dropdown-content">
-                <a href="#">Ссылка 4</a>
-                <a href="#">Ссылка 5</a>
-                <a href="#">Ссылка 6</a>
-            </div>
-        </div>
+            <div class="itemDescription">
+                <div class="title16 fw5">Описание</div>
+                <div class="title16 fw4" id="item_description">
+                    Отличная молодёжная шапка на осень-зиму. Выполнена из сочетания
+                    высококачественных материалов. Шерсть и кашемир придают изделию совмещение тепла и нежности. Вязка
+                    гладкая и плотная, аккуратный подворот, красивый лейбл. Очень популярный дизайн в этом сезоне.
+                    Огромный выбор цветов.
+                </div>
 
-        <a href="" class="dropbtn title16 fw5">Новинки</a>
+                <div class="row">
+                    <div class="title16 fw5">Состав: </div>
+                    <div class="column">
+                        Шерсть 50%
+                        Кашемир 10%
+                        Полиамид 20%
+                        Нейлон 20%
+                    </div>
+                    <div class="title16 fw5">Подкладка: </div>
+                    <div class="title16 fw3">Трикотаж</div>
+                </div>
 
-        <a href="" class="dropbtn title16 fw5">Скидки</a>
-
-
-    </div>
-    <div class="itemBlock">
-        <div class="item_img"><img src="ref/blond2.png" alt=""></div>
-        <div class="itemSmall_imgs">
-            <div class="item_small_img"><img src="ref/hat_blue.png" alt=""></div>
-            <div class="item_small_img"><img src="ref/hat_blue.png" alt=""></div>
-            <div class="item_small_img"><img src="ref/hat_blue.png" alt=""></div>
-            <div class="item_small_img"><img src="ref/hat_blue.png" alt=""></div>
-        </div>
-        <div class="itemTags">
-            <div class="title24 fw6 up">Шапка SHAPKISTORE «Serenity»</div>
-            <div class="price">
-                <div class="title28 fw6">1 000 ₽ </div><div class="title16 fw4 discount">1 500 ₽</div>
             </div>
 
-<div class="itemButtons">
-    <div class="itemButton">Добавить в корзину</div>
-    <div class="itemButton">Купить в один клик</div>
-</div>
-        </div>
-    </div>
-</section>
+        </section>
+
+        <section class="popularSection">
+            <div class="popularBlock">
+                <div class="popularTitle">
+                    <div class="main_logo" style="gap: 30px;">    
+                        <div class="title24 fw6 up">вам могут понравиться</div>
+                        <!-- <div class="title18 fw4 up gray">новое поступление</div> -->
+                    </div>
+                    <!-- <a href="" class="purple title16 fw5">Показать все</a> -->
+                </div>
+                <!-- Slider main container -->
+                <div class="popular_swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        
+                        <div class="swiper-slide">
+                            <div class="popular_item">
+                                <div class="popular_img">
+                                    <img src="ref/8467496bda7c7c5310f3cd56b1addb72.png" alt="">
+                                    <a href="" class="popularButtonTransparent">
+                                        <div class="buttonTransparent">быстрый просмотр</div>
+                                    </a>
+                                </div>
+                                <div class="description">
+                                    <div class="title10">
+                                        скидка 10%
+                                    </div>
+
+                                    <div class="title16 fw5">
+                                        Шапка SHAPKISTORE «Beany»
+                                    </div>
+
+                                    <div class="price">
+                                        <div class="title16 fw6">
+                                            1 000 ₽
+                                        </div>
+                                        <div class="title16 fw4 discount">
+                                            1 500 ₽
+                                        </div>
+                                    </div>
+
+                                    <div class="colors">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="58" height="12"
+                                            viewBox="0 0 58 12" fill="none">
+                                            <circle cx="6" cy="6" r="3.95" fill="#EDEDED" stroke="#C4C4C4"
+                                                stroke-width="0.1" />
+                                            <circle cx="6" cy="6" r="5.75" stroke="black" stroke-width="0.5" />
+                                            <circle cx="22" cy="6" r="4" fill="#1B9311" />
+                                            <circle cx="38" cy="6" r="4" fill="#4D0FD0" />
+                                            <circle cx="54" cy="6" r="4" fill="black" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="popular_item">
+                                <div class="popular_img">
+                                    <img src="ref/hat_wheat.png" alt="">
+                                    <a href="" class="popularButtonTransparent">
+                                        <div class="buttonTransparent">быстрый просмотр</div>
+                                    </a>
+                                </div>
+                                <div class="description">
+                                    <div class="title10">
+                                        скидка 10%
+                                    </div>
+
+                                    <div class="title16 fw5">
+                                        Шапка SHAPKISTORE «Classy Sassy»
+                                    </div>
+
+                                    <div class="price">
+                                        <div class="title16 fw6">
+                                            1 000 ₽
+                                        </div>
+                                        <div class="title16 fw4 discount">
+                                            1 500 ₽
+                                        </div>
+                                    </div>
+
+                                    <div class="colors">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="58" height="12"
+                                            viewBox="0 0 58 12" fill="none">
+                                            <circle cx="6" cy="6" r="3.95" fill="#EDEDED" stroke="#C4C4C4"
+                                                stroke-width="0.1" />
+                                            <circle cx="6" cy="6" r="5.75" stroke="black" stroke-width="0.5" />
+                                            <circle cx="22" cy="6" r="4" fill="#1B9311" />
+                                            <circle cx="38" cy="6" r="4" fill="#4D0FD0" />
+                                            <circle cx="54" cy="6" r="4" fill="black" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="popular_item">
+                                <div class="popular_img">
+                                    <img src="ref/hat_blue.png" alt="">
+                                    <a href="" class="popularButtonTransparent">
+                                        <div class="buttonTransparent">быстрый просмотр</div>
+                                    </a>
+                                </div>
+                                <div class="description">
+                                    <div class="title10">
+                                        новое поступление
+                                    </div>
+
+                                    <div class="title16 fw5">
+                                        Однотонная вязаная шапка SHAPKISTORE
+                                    </div>
+
+                                    <div class="price">
+                                        <div class="title16 fw6">
+                                            530 ₽
+                                        </div>
+                                        <div class="title16 fw4 discount">
+                                           
+                                        </div>
+                                    </div>
+
+                                    <div class="colors">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="58" height="12"
+                                            viewBox="0 0 58 12" fill="none">
+                                            <circle cx="6" cy="6" r="3.95" fill="#EDEDED" stroke="#C4C4C4"
+                                                stroke-width="0.1" />
+                                            <circle cx="6" cy="6" r="5.75" stroke="black" stroke-width="0.5" />
+                                            <circle cx="22" cy="6" r="4" fill="#1B9311" />
+                                            <circle cx="38" cy="6" r="4" fill="#4D0FD0" />
+                                            <circle cx="54" cy="6" r="4" fill="black" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="popular_item">
+                                <div class="popular_img">
+                                    <img src="ref/hat_white.png" alt="">
+                                    <a href="" class="popularButtonTransparent">
+                                        <div class="buttonTransparent">быстрый просмотр</div>
+                                    </a>
+                                </div>
+                                <div class="description">
+                                    <div class="title10">
+                                        хит продаж
+                                    </div>
+
+                                    <div class="title16 fw5">
+                                        Шапка SHAPKISTORE «Serenity»
+                                    </div>
+
+                                    <div class="price">
+                                        <div class="title16 fw6">
+                                            1 000 ₽
+                                        </div>
+                                        <div class="title16 fw4 discount">
+                                            1 500 ₽
+                                        </div>
+                                    </div>
+
+                                    <div class="colors">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="58" height="12"
+                                            viewBox="0 0 58 12" fill="none">
+                                            <circle cx="6" cy="6" r="3.95" fill="#EDEDED" stroke="#C4C4C4"
+                                                stroke-width="0.1" />
+                                            <circle cx="6" cy="6" r="5.75" stroke="black" stroke-width="0.5" />
+                                            <circle cx="22" cy="6" r="4" fill="#1B9311" />
+                                            <circle cx="38" cy="6" r="4" fill="#4D0FD0" />
+                                            <circle cx="54" cy="6" r="4" fill="black" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="popular_item">
+                                <div class="popular_img">
+                                    <img src="ref/8467496bda7c7c5310f3cd56b1addb72.png" alt="">
+                                    <a href="" class="popularButtonTransparent">
+                                        <div class="buttonTransparent">быстрый просмотр</div>
+                                    </a>
+                                </div>
+                                <div class="description">
+                                    <div class="title10">
+                                        скидка 10%
+                                    </div>
+
+                                    <div class="title16 fw5">
+                                        Шапка SHAPKISTORE «Beany»
+                                    </div>
+
+                                    <div class="price">
+                                        <div class="title16 fw6">
+                                            1 000 ₽
+                                        </div>
+                                        <div class="title16 fw4 discount">
+                                            1 500 ₽
+                                        </div>
+                                    </div>
+
+                                    <div class="colors">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="58" height="12"
+                                            viewBox="0 0 58 12" fill="none">
+                                            <circle cx="6" cy="6" r="3.95" fill="#EDEDED" stroke="#C4C4C4"
+                                                stroke-width="0.1" />
+                                            <circle cx="6" cy="6" r="5.75" stroke="black" stroke-width="0.5" />
+                                            <circle cx="22" cy="6" r="4" fill="#1B9311" />
+                                            <circle cx="38" cy="6" r="4" fill="#4D0FD0" />
+                                            <circle cx="54" cy="6" r="4" fill="black" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="popular_item">
+                                <div class="popular_img">
+                                    <img src="ref/hat_wheat.png" alt="">
+                                    <a href="" class="popularButtonTransparent">
+                                        <div class="buttonTransparent">быстрый просмотр</div>
+                                    </a>
+                                </div>
+                                <div class="description">
+                                    <div class="title10">
+                                        скидка 10%
+                                    </div>
+
+                                    <div class="title16 fw5">
+                                        Шапка SHAPKISTORE «Classy Sassy»
+                                    </div>
+
+                                    <div class="price">
+                                        <div class="title16 fw6">
+                                            1 000 ₽
+                                        </div>
+                                        <div class="title16 fw4 discount">
+                                            1 500 ₽
+                                        </div>
+                                    </div>
+
+                                    <div class="colors">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="58" height="12"
+                                            viewBox="0 0 58 12" fill="none">
+                                            <circle cx="6" cy="6" r="3.95" fill="#EDEDED" stroke="#C4C4C4"
+                                                stroke-width="0.1" />
+                                            <circle cx="6" cy="6" r="5.75" stroke="black" stroke-width="0.5" />
+                                            <circle cx="22" cy="6" r="4" fill="#1B9311" />
+                                            <circle cx="38" cy="6" r="4" fill="#4D0FD0" />
+                                            <circle cx="54" cy="6" r="4" fill="black" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="popular_item">
+                                <div class="popular_img">
+                                    <img src="ref/hat_blue.png" alt="">
+                                    <a href="" class="popularButtonTransparent">
+                                        <div class="buttonTransparent">быстрый просмотр</div>
+                                    </a>
+                                </div>
+                                <div class="description">
+                                    <div class="title10">
+                                        новое поступление
+                                    </div>
+
+                                    <div class="title16 fw5">
+                                        Однотонная вязаная шапка SHAPKISTORE
+                                    </div>
+
+                                    <div class="price">
+                                        <div class="title16 fw6">
+                                            530 ₽
+                                        </div>
+                                        <div class="title16 fw4 discount">
+                                           
+                                        </div>
+                                    </div>
+
+                                    <div class="colors">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="58" height="12"
+                                            viewBox="0 0 58 12" fill="none">
+                                            <circle cx="6" cy="6" r="3.95" fill="#EDEDED" stroke="#C4C4C4"
+                                                stroke-width="0.1" />
+                                            <circle cx="6" cy="6" r="5.75" stroke="black" stroke-width="0.5" />
+                                            <circle cx="22" cy="6" r="4" fill="#1B9311" />
+                                            <circle cx="38" cy="6" r="4" fill="#4D0FD0" />
+                                            <circle cx="54" cy="6" r="4" fill="black" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="popular_item">
+                                <div class="popular_img">
+                                    <img src="ref/hat_white.png" alt="">
+                                    <a href="" class="popularButtonTransparent">
+                                        <div class="buttonTransparent">быстрый просмотр</div>
+                                    </a>
+                                </div>
+                                <div class="description">
+                                    <div class="title10">
+                                        хит продаж
+                                    </div>
+
+                                    <div class="title16 fw5">
+                                        Шапка SHAPKISTORE «Serenity»
+                                    </div>
+
+                                    <div class="price">
+                                        <div class="title16 fw6">
+                                            1 000 ₽
+                                        </div>
+                                        <div class="title16 fw4 discount">
+                                            1 500 ₽
+                                        </div>
+                                    </div>
+
+                                    <div class="colors">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="58" height="12"
+                                            viewBox="0 0 58 12" fill="none">
+                                            <circle cx="6" cy="6" r="3.95" fill="#EDEDED" stroke="#C4C4C4"
+                                                stroke-width="0.1" />
+                                            <circle cx="6" cy="6" r="5.75" stroke="black" stroke-width="0.5" />
+                                            <circle cx="22" cy="6" r="4" fill="#1B9311" />
+                                            <circle cx="38" cy="6" r="4" fill="#4D0FD0" />
+                                            <circle cx="54" cy="6" r="4" fill="black" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- If we need pagination -->
+                    <!-- <div class="swiper-pagination"></div> -->
+
+                    <!-- If we need navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+
+
+                </div>
+            </div>
+        </section>
 
         <footer></footer>
     </main>

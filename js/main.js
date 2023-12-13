@@ -1,83 +1,81 @@
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
+const swiper = new Swiper(".swiper", {
+  // Optional parameters
+  direction: "horizontal",
+  loop: true,
 
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
 
-  const popular_swiper = new Swiper('.popular_swiper', {
-    slidesPerView: 4,
-    spaceBetween: 0,
-    slidesPerGroup: 2,
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-  
-    // If we need pagination
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-  
-    // And if we need scrollbar
-    scrollbar: {
-      el: '.swiper-scrollbar',
-    },
-  });
+  // And if we need scrollbar
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+});
 
-// JavaScript для обработки событий нажатия на кнопку
+const popular_swiper = new Swiper(".popular_swiper", {
+  slidesPerView: 4,
+  spaceBetween: 0,
+  slidesPerGroup: 2,
 
-// Получаем все элементы с классом "dropdown"
-var dropdowns = document.querySelectorAll('.dropdown');
-var otherElements = document.querySelector('.other-elements');
+  // Optional parameters
+  direction: "horizontal",
+  loop: true,
 
-// Добавляем обработчик события для каждого элемента
-dropdowns.forEach(function(dropdown) {
-  var button = dropdown.querySelector('.dropbtn');
-  var content = dropdown.querySelector('.dropdown-content');
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
 
-  // Обработчик события для нажатия на кнопку
-  button.addEventListener('click', function() {
-    // Переключаем видимость контейнера со ссылками
-    content.classList.toggle('show');
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
 
-    // Устанавливаем margin-top для other-elements в зависимости от высоты dropdown-content
-    if (content.classList.contains('show')) {
-      otherElements.style.marginTop = content.clientHeight + 'px';
+  // And if we need scrollbar
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+});
+
+var dropdowns = document.querySelectorAll(".dropdown");
+var otherElements = document.querySelector(".other-elements");
+
+dropdowns.forEach(function (dropdown) {
+  var button = dropdown.querySelector(".dropbtn");
+  var content = dropdown.querySelector(".dropdown-content");
+
+  button.addEventListener("click", function () {
+    content.classList.toggle("show");
+    if (content.classList.contains("show")) {
+      otherElements.style.marginTop = content.clientHeight + "px";
     } else {
-      otherElements.style.marginTop = '0';
+      otherElements.style.marginTop = "0";
     }
   });
 
-  // Закрываем контейнер со ссылками, если клик произошел вне элемента
-  window.addEventListener('click', function(event) {
-    if (!event.target.matches('.dropbtn') && !event.target.closest('.dropdown')) {
-      content.classList.remove('show');
-      otherElements.style.marginTop = '0';
+  window.addEventListener("click", function (event) {
+    if (
+      !event.target.matches(".dropbtn") &&
+      !event.target.closest(".dropdown")
+    ) {
+      content.classList.remove("show");
+      otherElements.style.marginTop = "0";
     }
   });
 });
+
+function changeImage(newImagePath) {
+  var largeImage = document.getElementById("item_big_img");
+  largeImage.src = newImagePath;
+}
