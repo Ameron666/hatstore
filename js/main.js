@@ -79,3 +79,57 @@ function changeImage(newImagePath) {
   var largeImage = document.getElementById("item_big_img");
   largeImage.src = newImagePath;
 }
+
+$(document).ready(function () {
+  $(".tabs a").click(function (e) {
+      e.preventDefault();
+      $(".tabs a").removeClass("active");
+      $(this).addClass("active");
+      $(".itemDescriptionTab").removeClass("active");
+      let tabId = $(this).attr("href");
+      $(tabId).addClass("active");
+  });
+});
+
+$(document).ready(function () {
+  $(".formBlock input").on("input", function () {
+    if ($(this).val().trim() !== "") {
+      $(this).addClass("filled").removeClass("error");
+    } else {
+      $(this).removeClass("filled");
+    }
+  });
+
+  $("#myForm").submit(function (event) {
+    $(".formBlock input").each(function () {
+      if ($(this).val().trim() === "") {
+        $(this).addClass("error");
+      } else {
+        $(this).removeClass("error");
+      }
+    });
+
+    var emailInput = $("input[name='email']");
+    var emailValue = emailInput.val().trim();
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(emailValue)) {
+      emailInput.addClass("error");
+    } else {
+      emailInput.removeClass("error");
+    }
+
+    // Добавим проверку наличия значения для класса filled
+    $(".formBlock input").each(function () {
+      if ($(this).val().trim() !== "") {
+        $(this).addClass("filled");
+      } else {
+        $(this).removeClass("filled");
+      }
+    });
+
+    if ($(".formBlock input.error").length > 0) {
+      event.preventDefault();
+    }
+  });
+});
+
