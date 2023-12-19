@@ -28,7 +28,10 @@ function getFileExtension(filename) {
   return filename.slice(((filename.lastIndexOf(".") - 1) >>> 0) + 2);
 }
 
-//Category items
+var currentUrl = window.location.href;
+var urlSearchParams = new URLSearchParams(window.location.search);
+var forValue = urlSearchParams.get("for");
+
 getData("item").then((response) => {
   response.forEach((event) => {
     event.date = new Date(event.date);
@@ -42,9 +45,12 @@ getData("item").then((response) => {
 
   let block = $("#category_items").empty();
   const maxCharacters = 100;
-
+  console.log(response);
   response.forEach((element) => {
-    block.append(`
+    if (element.for === forValue) {
+      $("#category_name").empty();
+      $("#category_name").append(element.for);
+      block.append(`
         <div class="popular_item">
         <div class="popular_img">
             <img src="admin/img/${stringToImageArray(element.img)[0]}" alt="">
@@ -85,6 +91,7 @@ getData("item").then((response) => {
         </div>
     </div>
         `);
+    }
   });
 });
 
@@ -166,6 +173,7 @@ if (id_item) {
     $("#tovar_name").val(response[1]);
     $("#tovar_price").val(response[4]);
     $("#tovar_count").val(1);
+    $("#tovar_img").val(stringToImageArray(response[12])[0]);
 
     $(".itemButtons").append(`
       <div class="itemButton" id="addToCartButton">Добавить в корзину</div>
@@ -182,138 +190,71 @@ $(".itemInfo").on("click", "#addToCartButton", function () {
   cartMass.push($("#tovar_color").val());
   cartMass.push($("#tovar_size").val());
   cartMass.push($("#tovar_count").val());
+  cartMass.push($("#tovar_img").val());
 
   if ($("#tovar_color").val() != "" && $("#tovar_size").val() !== "") {
-    saveToLocalStorage(`${$("#tovar_id").val()}_${$("#tovar_color").val()}_${$("#tovar_size").val()}`, cartMass);
+    saveToLocalStorage(
+      `${$("#tovar_id").val()}_${$("#tovar_color").val()}_${$(
+        "#tovar_size"
+      ).val()}`,
+      cartMass
+    );
 
     let getMassCart = getFromLocalStorage();
     $("#basket").html(`Корзина (${getMassCart.length})`);
     alert("Товар добавлен в корзину!");
-    
   } else {
     alert("Выберите цвет и размер!");
   }
 });
 
-//Выгрузка всех новостей на главную
-getData("news").then((response) => {
-  response.forEach((event) => {
-    event.date = new Date(event.date);
-  });
-
-  function compareDates(event1, event2) {
-    return event2.date - event1.date;
-  }
-
-  response.sort(compareDates);
-
-  let block = $("#news_show_main_page").empty();
-  const maxCharacters = 100;
-
-  let value = 6;
-  let length = response.length;
-
-  if (value > length) {
-    value = length;
-  }
-
-  for (let i = 0; i < value; i++) {
+getData("item").then((response) => {
+  let block = $(".popular_items_slider").empty();
+  response.forEach((element) => {
     block.append(`
-            <div class="events_block">
-                <div class="events_block__top">
-                    <img src="admin/img/${
-                      stringToImageArray(response[i].img)[0]
-                    }" alt="" />
+      <div class="swiper-slide swiper_popular_slide">
+        <div class="popular_item">
+            <div class="popular_img">
+                <img src="admin/img/${
+                  stringToImageArray(element.img)[0]
+                }" alt="">
+                <a href="item.html?id_item=${
+                  element.id
+                }" class="popularButtonTransparent">
+                    <div class="buttonTransparent">быстрый просмотр</div>
+                </a>
+            </div>
+            <div class="description">
+                <div class="title10">
+                    ${element.tags}
                 </div>
-                <div class="events_block__bottom">
-                <div class="events_block__bottom___line">
-                    <img src="img/forEvent.png" alt="" />
+                <div class="title16 fw5">
+                    ${element.title}
                 </div>
-                <div class="events_block__bottom___title">
-                    ${response[i].title.slice(0, maxCharacters)}...
+                <div class="price">
+                    <div class="title16 fw6">
+                        ${element.price} ₽
+                    </div>
+                    <div class="title16 fw4 discount">
+                        ${element.price_discount} ₽
+                    </div>
                 </div>
-                <div class="events_block__bottom___dops">
-                    <div class="events_block__bottom___dops____date">${
-                      response[i].date.toISOString().split("T")[0]
-                    }</div>
-                    <a href="new.html?id_new=${
-                      response[i].id
-                    }" class="events_block__bottom___dops____readMore">
-                        Читать дальше >>
-                    </a>
-                </div>
+                <div class="colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="58" height="12"
+                        viewBox="0 0 58 12" fill="none">
+                        <circle cx="6" cy="6" r="3.95" fill="#EDEDED" stroke="#C4C4C4"
+                            stroke-width="0.1" />
+                        <circle cx="6" cy="6" r="5.75" stroke="black" stroke-width="0.5" />
+                        <circle cx="22" cy="6" r="4" fill="#1B9311" />
+                        <circle cx="38" cy="6" r="4" fill="#4D0FD0" />
+                        <circle cx="54" cy="6" r="4" fill="black" />
+                    </svg>
                 </div>
             </div>
-        `);
-  }
-});
-
-// ---------------------------------------------------------
-
-//выгрузка всех слайдов в слайдер
-$(document).ready(function () {
-  getData("slider").then((response) => {
-    let slides = "";
-    response.forEach((element) => {
-      slides += `
-                    <div class="swiper-slide slider">
-                        <div class="slider_left">
-                            <img src="admin/img/${
-                              stringToImageArray(element.img)[0]
-                            }" alt="" />
-                        </div>
-                        <div class="slider_right">
-                            <p class="slider_right__title">
-                                ${element.title}
-                            </p>
-                            <p class="slider_right__desc">
-                                ${element.text}
-                            </p>
-                            <a href="${
-                              element.link
-                            }" class="slider_right__button">Узнать больше</a>
-                        </div>
-                    </div>
-                `;
-    });
-
-    const swiperHtml = `
-                <swiper class="mySwiper" pagination="true">
-                    <div class="swiper-wrapper">
-                        ${slides}
-                    </div>
-                    <div class="swiper-pagination"></div>
-                </swiper>
-            `;
-
-    $("#slider_all_show").html(swiperHtml);
-
-    if ($("#slider_all_show").length) {
-      const swiper = new Swiper(".mySwiper", {
-        // Опциональные параметры
-        direction: "horizontal",
-        loop: true,
-        pagination: {
-          el: ".swiper-pagination",
-        },
-        autoplay: {
-          delay: 5000,
-        },
-      });
-    }
+        </div>
+      </div>
+    `);
   });
 });
 
-// ---------------------------------------------------------
 
-//Редактирование услуги
-const url_service = new URL(window.location.href);
-const queryParams_service = url_service.searchParams;
-const id_service = queryParams_service.get("id_service");
-if (id_service) {
-  getData("services", id_service).then((response) => {
-    $("#services_find_service .new_block__title").text(response[1]);
-    $("#newName").text(response[1]);
-    $("#services_find_service .new_block__nums").html(response[2]);
-  });
-}

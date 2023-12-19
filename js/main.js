@@ -24,25 +24,13 @@ const swiper = new Swiper(".swiper", {
 const popular_swiper = new Swiper(".popular_swiper", {
   slidesPerView: 4,
   spaceBetween: 0,
-  slidesPerGroup: 2,
-
-  // Optional parameters
+  slidesPerGroup: 1,
   direction: "horizontal",
   loop: true,
-
-  // If we need pagination
-  // pagination: {
-  //   el: ".swiper-pagination",
-  //   clickable: true,
-  // },
-
-  // Navigation arrows
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-
-  // And if we need scrollbar
   scrollbar: {
     el: ".swiper-scrollbar",
   },
@@ -315,7 +303,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const cartItemHTML = `
         <div class="basketContentItem">
           <div class="basketContentItemImage">
-              <img src="ref/blond2.png" alt="">
+              <img src="admin/img/${product[6]}" alt="">
           </div>
           <div class="basketContentItemDescription">
               <div class="basketContentItemDescriptionTitle">
@@ -424,3 +412,4 @@ console.log('Товар 1:');
 console.log('Наименование: ' + massToSend[0][0][1] + ' цвет: ' + massToSend[0][0][3] + ' размер: ' + massToSend[0][0][4] + ' Количество: ' + massToSend[0][0][5] + ' Цена: ' + massToSend[0][0][2]);
 console.log('Товар 2:');
 console.log('Наименование: ' + massToSend[0][1][1] + ' цвет: ' + massToSend[0][1][3] + ' размер: ' + massToSend[0][1][4] + ' Количество: ' + massToSend[0][1][5] + ' Цена: ' + massToSend[0][1][2]);
+

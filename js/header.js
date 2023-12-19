@@ -17,13 +17,13 @@ header.append(`
             <div class="title24 black fw4">IDEAL</div>
         </a>
         <div class="header_links">
-            <a href="catalog.html">
+            <a href="catalog.html?for=Для неё">
                 <div class="title16">Женское</div>
             </a>
-            <a href="catalog.html">
+            <a href="catalog.html?for=Для него">
                 <div class="title16">Мужское</div>
             </a>
-            <a href="catalog.html">
+            <a href="catalog.html?for=Для детей">
                 <div class="title16">Детское</div>
             </a>
             <a href="catalog.html">

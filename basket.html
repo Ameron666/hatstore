@@ -39,14 +39,15 @@
                         <div class="basketDescription">
                             <div class="title16 fw4 gray">Моя корзина</div>
 
-                            <div class="title16 fw4 purple">Количество позиций: <span id="countCartDataGet"></span></div>
+                            <div class="title16 fw4 purple">Количество позиций: <span id="countCartDataGet"></span>
+                            </div>
                         </div>
                         <div class="basketButtonCancel">
                             <a href="#">&times; Сбросить</a>
                         </div>
                     </div>
                     <div id="cartContainer">
-<!-- 
+                        <!-- 
                         <div class="basketContentItem">
                             <div class="basketContentItemImage">
                                 <img src="ref/blond2.png" alt="">
@@ -207,7 +208,64 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="formBlock">
+                <form action="" method="post" id="myForm">
+                    <div class="title24 fw6 up">оформление заказа</div>
+                    <div class="title20 fw6 up purple">информация о заказчике</div>
+                    <div class="formBlock_inputs basket_inputs">
+                        <label>
+                            Имя<span class="purple">*</span>:
+                            <input type="text" name="name" class="formBlockInputSmall" placeholder="Имя" required>
+                        </label>
+
+                        <label>
+                            Фамилия<span class="purple">*</span>:
+                            <input type="text" name="lastname" class="formBlockInputSmall" placeholder="Фамилия"
+                                required>
+                        </label>
+
+                        <label>
+                            Email<span class="purple">*</span>:
+                            <input type="email" name="email" class="formBlockInputSmall" placeholder="mail@info.com"
+                                required>
+                        </label>
+
+                        <label>
+                            Телефон<span class="purple">*</span>:
+                            <input type="tel" name="tel" class="formBlockInputSmall" placeholder="8 (888) 888-88-88"
+                                required>
+                        </label>
+
+                        <label>
+                            Страна<span class="purple">*</span>:
+                            <input type="text" name="country" class="formBlockInputSmall" placeholder="Страна" required>
+                        </label>
+
+                        <label>
+                            Город<span class="purple">*</span>:
+                            <input type="text" name="city" class="formBlockInputSmall" placeholder="Город" required>
+                        </label>
+
+                        <label>
+                            Адрес<span class="purple">*</span>:
+                            <input type="text" name="address " class="formBlockInputSmall" placeholder="" required>
+                        </label>
+
+                        <label>
+                            Индекс<span class="purple">*</span>:
+                            <input type="number" name="Index" class="formBlockInputSmall" placeholder="000000" required>
+                        </label>
+                    </div>
+
+
+
+                    <button class="basketPriceButton" type="submit">Оформить заказ</button>
+                </form>
+            </div>
         </section>
+
+
 
 
 
