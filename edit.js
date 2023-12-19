@@ -45,7 +45,7 @@ getData("item").then((response) => {
 
   let block = $("#category_items").empty();
   const maxCharacters = 100;
-  console.log(response);
+  // console.log(response);
   response.forEach((element) => {
     if (element.for === forValue) {
       $("#category_name").empty();
@@ -210,9 +210,11 @@ $(".itemInfo").on("click", "#addToCartButton", function () {
 
 getData("item").then((response) => {
   let block = $(".popular_items_slider").empty();
-  response.forEach((element) => {
-    block.append(`
-      <div class="swiper-slide swiper_popular_slide">
+  let limit = 4;
+
+  response.slice(0, limit).forEach((element) => {
+
+    block.append(`  
         <div class="popular_item">
             <div class="popular_img">
                 <img src="admin/img/${
@@ -252,7 +254,7 @@ getData("item").then((response) => {
                 </div>
             </div>
         </div>
-      </div>
+      
     `);
   });
 });

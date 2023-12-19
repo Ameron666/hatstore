@@ -174,7 +174,15 @@
   width: 100%;
 }
 
-.swiper_popular_slide {}
+.popular_items_slider{
+  display: flex;
+  gap: 30px;
+}
+
+.swiper_popular_slide {
+  
+  width: 270px;
+}
 
 .swiper-pagination-bullet {
   background: var(--color-white);
@@ -264,9 +272,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 140px;
+  height: 160px;
   background-color: var(--color-light-gray);
   padding: 20px 135px;
+  margin-top: 120px;
 }
 
 .footer_copiryte {

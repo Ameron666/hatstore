@@ -399,17 +399,59 @@ let massToSend = [];
 massToSend.push(getFromLocalStorage());
 
 massForm = [];
-massForm.push(['Алим', 'Джатдоев', 'alimdzhatdoev@mail.ru', '1234567890', 'Россия', 'Черкесск', 'Ленина 1', '369000']);
+// massForm.push(['Алим', 'Джатдоев', 'alimdzhatdoev@mail.ru', '1234567890', 'Россия', 'Черкесск', 'Ленина 1', '369000']);
 massToSend.push(massForm);
 
 console.log(massToSend);
 
-console.log('Имя: ' + massToSend[1][0][0]);
-console.log('Фамилия: ' + massToSend[1][0][1]);
-console.log('--------------------------------------------------------');
-console.log('Заказ:');
-console.log('Товар 1:');
-console.log('Наименование: ' + massToSend[0][0][1] + ' цвет: ' + massToSend[0][0][3] + ' размер: ' + massToSend[0][0][4] + ' Количество: ' + massToSend[0][0][5] + ' Цена: ' + massToSend[0][0][2]);
-console.log('Товар 2:');
-console.log('Наименование: ' + massToSend[0][1][1] + ' цвет: ' + massToSend[0][1][3] + ' размер: ' + massToSend[0][1][4] + ' Количество: ' + massToSend[0][1][5] + ' Цена: ' + massToSend[0][1][2]);
+// console.log('Имя: ' + massToSend[1][0][0]);
+// console.log('Фамилия: ' + massToSend[1][0][1]);
+// console.log('--------------------------------------------------------');
+// console.log('Заказ:');
+// console.log('Товар 1:');
+// console.log('Наименование: ' + massToSend[0][0][1] + ' цвет: ' + massToSend[0][0][3] + ' размер: ' + massToSend[0][0][4] + ' Количество: ' + massToSend[0][0][5] + ' Цена: ' + massToSend[0][0][2]);
+// console.log('Товар 2:');
+// console.log('Наименование: ' + massToSend[0][1][1] + ' цвет: ' + massToSend[0][1][3] + ' размер: ' + massToSend[0][1][4] + ' Количество: ' + massToSend[0][1][5] + ' Цена: ' + massToSend[0][1][2]);
 
+$(document).ready(function() {
+  $('#myForm').submit(function(event) {
+    event.preventDefault();
+var form = [];
+    var formData = $(this).serializeArray();
+    formData.forEach(function(data){
+      form.push(data.value);
+    })
+    massForm.push(form);
+  });
+});
+
+$(document).ready(function() {
+  // Создаем массив для хранения сообщений о товарах
+  var orderMessages = [];
+
+  $('#myForm').submit(function(event) {
+    event.preventDefault();
+    var form = [];
+    var formData = $(this).serializeArray();
+    formData.forEach(function(data) {
+      form.push(data.value);
+    });
+    massForm.push(form);
+
+    // Создаем сообщения о товарах и добавляем их в массив
+    var orderMessage = 'Заказ:';
+
+    massForm[0].forEach(function(item, index) {
+      orderMessage += `\nТовар ${index + 1}:`;
+      orderMessage += `\nНаименование: ${item[1]} цвет: ${item[3]} размер: ${item[4]} Количество: ${item[5]} Цена: ${item[2]}`;
+    });
+
+    // Добавляем сообщение в массив
+    orderMessages.push(orderMessage);
+  });
+
+  // Пример: Вывод массива сообщений в консоль
+  $('#showMessages').click(function() {
+    console.log(orderMessages);
+  });
+});
