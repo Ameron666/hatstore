@@ -217,6 +217,14 @@
   align-items: center;
 }
 
+.main_logo {
+
+}
+
+.main_logo img {
+  width: 140px;
+}
+
 .headerSection {
   justify-content: space-between;
   padding: 0px 135px;
@@ -253,10 +261,10 @@
 .footerSection {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  height: 120px;
+  align-items: center;
+  height: 140px;
   background-color: var(--color-light-gray);
-  padding: 30px 135px;
+  padding: 20px 135px;
 }
 
 .footer_copiryte {
@@ -492,7 +500,7 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  width: 230px;
+  width: 270px;
 }
 
 .price {
@@ -657,6 +665,32 @@
   gap: 16px;
 }
 
+.itemColorButton {
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  /* border: solid 1px var(--color-white); */
+}
+
+.itemColorButton.active-color {
+  border: solid 1px var(--color-white);
+}
+
+.itemColorButton.active-color::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border: 2px solid var(--color-purple);
+  border-radius: 50%;
+  z-index: -1;
+}
+
 .sizeButton {
   border-radius: 20px;
   border: 1px solid var(--color-purple);
@@ -670,7 +704,8 @@
   transition: all 0.3s ease-in-out;
 }
 
-.sizeButton:hover {
+.sizeButton:hover,
+.activeSizeButton {
   background: var(--color-purple3);
   /* color: var(--color-white); */
 }
@@ -767,6 +802,16 @@
   border-radius: 6px;
 }
 
+.basketContentItemTop {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  padding: 30px;
+  gap: 30px;
+  /* border-top: solid 1px var(--color-blue-gray); */
+  border-bottom: solid 1px var(--color-blue-gray);
+  /* justify-content: space-between; */
+}
 .basketContentItem {
   display: flex;
   width: 100%;
@@ -831,6 +876,7 @@
 .basketPriceBlock {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   gap: 30px;
 }
 
@@ -998,4 +1044,22 @@
 .formBlock label {
   margin-right: 10px;
   margin-bottom: 10px;
+}
+
+
+
+/* ----------------- */
+
+.hiddenBlocks{
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+.hiddenBlocks input {
+  border: 1px solid #000;
+  width: 100px;
+}
+
+.basketContentItemDelete{
+  cursor: pointer;
 }

@@ -14,7 +14,7 @@ header.append(`
     <section class="headerSection">
         <a class="main_logo" href="/">
             <div class="title24 purple fw6">SHAPKI</div>
-            <div class="title24 black fw3">STORE</div>
+            <div class="title24 black fw4">IDEAL</div>
         </a>
         <div class="header_links">
             <a href="catalog.html">
@@ -49,7 +49,7 @@ header.append(`
                 </svg>
                 <!-- <div class="title16"></div> -->
                 <a href="basket.html">
-                    <div class="title16" id="basket">Корзина (0)</div>
+                    <div class="title16" id="basket" >Корзина (0)</div>
                 </a>
             </div>
         </div>

@@ -3,10 +3,9 @@ const footer = $("footer");
 footer.append(`
     <section class="footerSection">
         <div class="footer_copiryte">
-            <div class="main_logo">
-                <div class="title24 purple fw6">SHAPKI</div>
-                <div class="title24 black fw3">STORE</div>
-            </div>
+            <a class="main_logo" href="/">
+                <img src="ref/ideal.webp" alt="" srcset="">
+            </a>
             <div class="title10 fw4">
                 2020 © Все права защищены
             </div>

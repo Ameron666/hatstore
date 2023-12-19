@@ -28,69 +28,31 @@
 
 
         <section class="itemSection">
-
-            <!-- 
-            <div class="leftNavMenu">
-                <div class="dropdown" id="dropdown1">
-
-                    <div class="dropbtn title16 fw5">Женская коллекция</div>
-                    <div class="dropdown-content">
-                        <a href="#">Показать все</a>
-                        <a href="#">Осень-Зима 2020/21</a>
-                        <a href="#">Весна-Лето 2020</a>
-                        <a href="#">Шапки</a>
-                        <a href="#">Комплекты</a>
-                    </div>
-                </div>
-
-                <div class="dropdown" id="dropdown2">
-                    <div class="dropbtn title16 fw5">Мужская коллекция</div>
-                    <div class="dropdown-content">
-                        <a href="#">Ссылка 4</a>
-                        <a href="#">Ссылка 5</a>
-                        <a href="#">Ссылка 6</a>
-                    </div>
-                </div>
-
-                <div class="dropdown" id="dropdown2">
-                    <div class="dropbtn title16 fw5">Детская коллекция</div>
-                    <div class="dropdown-content">
-                        <a href="#">Ссылка 4</a>
-                        <a href="#">Ссылка 5</a>
-                        <a href="#">Ссылка 6</a>
-                    </div>
-                </div>
-
-                <a href="" class="dropbtn title16 fw5">Новинки</a>
-
-                <a href="" class="dropbtn title16 fw5">Скидки</a>
-
-
-            </div>
-             -->
-
             <div class="itemBlock">
-                <div class="item_img"><img src="ref/blond2.png" alt="" id="item_big_img"></div>
-                <div class="itemSmall_imgs">
-                    <div class="item_small_img"><img src="ref/blond2.png" alt=""
+                <div class="item_img" id="this_item_img">
+                    <!-- <img src="ref/blond2.png" alt="" id="item_big_img"> -->
+                </div>
+                <div class="itemSmall_imgs" id="this_item_images">
+                    <!-- <div class="item_small_img"><img src="ref/blond2.png" alt=""
                             onclick="changeImage('ref/blond2.png')"></div>
                     <div class="item_small_img"><img src="ref/blond3.png" alt=""
                             onclick="changeImage('ref/blond3.png')"></div>
                     <div class="item_small_img"><img src="ref/blond4.png" alt=""
                             onclick="changeImage('ref/blond4.png')"></div>
                     <div class="item_small_img"><img src="ref/blond5.png" alt=""
-                            onclick="changeImage('ref/blond5.png')"></div>
+                            onclick="changeImage('ref/blond5.png')"></div> -->
                 </div>
                 <div class="itemInfo">
-                    <div class="itemTags">
-                        <div class="itemTagButton">хит продаж</div>
-                        <div class="itemTagButton">скидка</div>
+                    <div class="itemTags" id="item_tags">
+                        <!-- <div class="itemTagButton">хит продаж</div> -->
+                        <!-- <div class="itemTagButton">скидка</div> -->
                     </div>
-                    <div class="title24 fw6 up" id="item_name">Шапка SHAPKISTORE «Serenity»</div>
-                    <div class="title12 fw4 gray" id="item_vendor">Арт. YC818</div>
+                    <div class="title24 fw6 up" id="item_name"></div>
+                    <div class="title12 fw4 gray row">Арт. &nbsp; <div id="item_vendor"> </div>
+                    </div>
                     <div class="price">
-                        <div class="title28 fw6" id="item_price">1 000 ₽ </div>
-                        <div class="title16 fw4 discount" id="item_price_discount">1 500 ₽</div>
+                        <div class="title28 fw6" id="item_price"></div>
+                        <div class="title16 fw4 discount" id="item_price_discount"></div>
                     </div>
 
                     <div class="itemColors">
@@ -98,24 +60,31 @@
                             <div class="title16 fw5">Цвет:</div>
                             <div class="title16 fw3">Чёрный</div>
                         </div>
-                        <div class="itemColor">
-                            . . . .
+                        <div class="itemColor" id="item_color">
+
                         </div>
                     </div>
                     <div class="itemColors">
                         <div class="title16 fw5">Размер:</div>
-                        <div class="itemColor">
-                            <div class="sizeButton">52-54</div>
+                        <div class="itemColor" id="item_size">
+                            <!-- <div class="sizeButton">52-54</div>
                             <div class="sizeButton">54-56</div>
-                            <div class="sizeButton">56-58</div>
+                            <div class="sizeButton">56-58</div> -->
                         </div>
                         <a href="" class="title12 fw4 gray">справка размеров</a>
                     </div>
                     <div class="itemButtons">
-                        <div class="itemButton">Добавить в корзину</div>
-                        <div class="itemButton">Купить в один клик</div>
+                        <!-- <div class="itemButton"  onclick="addToCart(1)">Добавить в корзину</div>
+                        <div class="itemButton"  onclick="addToCart(1)">Купить в один клик</div> -->
                     </div>
-
+                    <div class="hiddenBlocks">
+                        tovar_id <input type="text" id="tovar_id">
+                        tovar_name <input type="text" id="tovar_name">
+                        tovar_price <input type="text" id="tovar_price">
+                        tovar_color <input type="text" id="tovar_color">
+                        tovar_size <input type="text" id="tovar_size">
+                        tovar_count <input type="text" id="tovar_count">
+                    </div>
                 </div>
             </div>
 
@@ -133,27 +102,17 @@
                 </div>
                 <div class="itemDescriptionTab active" id="tab1">
                     <div class="title16 fw4" id="item_description">
-                        Отличная молодёжная шапка на осень-зиму. Выполнена из сочетания
-                        высококачественных материалов. Шерсть и кашемир придают изделию совмещение тепла и нежности.
-                        Вязка
-                        гладкая и плотная, аккуратный подворот, красивый лейбл. Очень популярный дизайн в этом сезоне.
-                        Огромный выбор цветов.
+
                     </div>
                     <div class="itemDescriptionTabContent">
                         <div class="title16 fw5">Состав: </div>
-                        <div class="composition">
-                            <p>Шерсть 50%</p>
-                            <p>Кашемир 10%</p>
-                            <p>Полиамид 20%</p>
-                            <p>Нейлон 20%</p>
+                        <div class="composition" id="item_composition">
+
                         </div>
                         <div class="title16 fw5">Подкладка: </div>
-                        <div class="lining title16 fw3">Трикотаж</div>
+                        <div class="lining title16 fw3" id="item_lining"></div>
                     </div>
-
                 </div>
-         
-
             </div>
 
         </section>
@@ -520,6 +479,7 @@
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/main.js"></script>
+    <script type="module" src="edit.js"></script>
 </body>
 
 </html>
