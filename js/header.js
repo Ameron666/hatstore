@@ -13,8 +13,7 @@ const header = $("header");
 header.append(`
     <section class="headerSection">
         <a class="main_logo" href="/">
-            <div class="title24 purple fw6">SHAPKI</div>
-            <div class="title24 black fw4">IDEAL</div>
+            <img src="ref/ideal.png" alt="">
         </a>
         <div class="header_links">
             <a href="catalog.html?for=Для неё">
@@ -30,7 +29,7 @@ header.append(`
                 <div class="title16">Новинки</div>
             </a>
             <a href="catalog.html">
-                <div class="title16 purple fw6">Скидки</div>
+                <div class="title16 brown fw6">Скидки</div>
             </a>
         </div>
         <div class="header_right">
@@ -45,7 +44,7 @@ header.append(`
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path
                         d="M7.5 6.75C7.5 6.75 7.5 2.25 12 2.25C16.5 2.25 16.5 6.75 16.5 6.75M3.75 6.75V21.75H20.25V6.75H3.75Z"
-                        stroke="#6A1B9A" stroke-linecap="round" stroke-linejoin="round" />
+                        stroke="#987965" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
                 <!-- <div class="title16"></div> -->
                 <a href="basket.html">

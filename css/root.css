@@ -14,7 +14,10 @@
 --color-red: #E25822;
 --color-white: #fff;
 --color-black: #000;
---color-purple: #6A1B9A;
+--color-brown: #987965;
+--color-brown3: rgba(138, 119, 83, 0.30);
+--color-purple: #987965;
+/* --color-purple: #6A1B9A; */
 --color-purple3: rgba(106, 27, 154, 0.30);
 --color-gray: #646464;
 --color-blue-gray: #90A4AE;
