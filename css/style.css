@@ -51,6 +51,10 @@
   letter-spacing: 0.8px;
 }
 
+.title64 {
+  font-size: 64px;
+}
+
 .fw3 {
   font-weight: 300;
 }
@@ -69,6 +73,10 @@
 
 .fw7 {
   font-weight: 700;
+}
+
+.tcent {
+  text-align: center;
 }
 
 .discount {
@@ -959,10 +967,13 @@
 .aboutSection {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .aboutTitle {
-  padding-left: 135px;
+  /* padding-left: 135px; */
+  margin: 30px;
 }
 
 .aboutBlock {
@@ -970,14 +981,15 @@
   flex-direction: row;
   justify-content: space-between;
   /* gap: 32px; */
-  /* width: var(--width-block); */
+  width: var(--width-block);
+  padding: 30px 0;
 }
 
 .aboutBlockText {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding: 45px 135px;
+  /* padding: 45px 135px; */
   /* width: 600px; */
 }
 
@@ -987,12 +999,30 @@
   gap: 8px;
 }
 
+.aboutBlockAchivement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding: 30px;
+  border: 1px solid var(--color-brown);
+  width: 250px;
+  /* margin: 60px 50px 0; */
+}
+
+.achivements {
+  padding-top: 60px;
+}
+
 .aboutImage {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 635px;
-  height: 380px;
+  width: 100%;
+  /* width: 635px; */
+  /* height: 380px; */
   overflow: hidden;
 }
 
