@@ -446,3 +446,18 @@ $(document).ready(function() {
     console.log(orderMessages);
   });
 });
+
+
+// ------------------------------------------------------------------------------------------------
+
+
+document.getElementById('colorPicker').addEventListener('change', function() {
+  let selectedColor = this.value;
+  let colorDiv = document.createElement("div");
+  colorDiv.className = "itemColorButton";
+  colorDiv.style.backgroundColor = selectedColor;
+  document.getElementById("item_color").appendChild(colorDiv);
+});
+
+
+

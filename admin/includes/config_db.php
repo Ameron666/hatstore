@@ -82,12 +82,19 @@ function getSchema()
                 ],
 
                 'tags' => [
-                    'name' => 'Размеры',
+                    'name' => 'Скидки и прочее',
                     'element' => 'input',
                     'type' => 'hidden',
                     'data' => ["Хит продаж", "Скидка", "Новое"],
                     'selectOne' => false,
                     'required' => true,
+                ],
+
+                'collection'=> [
+                    'name' => 'Выбор коллекции',
+                    'element' => 'select',
+                    'options' => 'collections',
+                    'required' => false,
                 ],
 
                 'img' => [
@@ -99,7 +106,7 @@ function getSchema()
             ],
         ],
 
-        'colections' => [
+        'collections' => [
             'menuName' => 'Коллекции',
             'fields' => [
                 'title' => [
