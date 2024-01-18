@@ -186,13 +186,12 @@
   width: 100%;
 }
 
-.popular_items_slider{
+.popular_items_slider {
   display: flex;
   gap: 30px;
 }
 
 .swiper_popular_slide {
-  
   width: 270px;
 }
 
@@ -236,7 +235,7 @@
   /* color: var(--color-black); */
 }
 
-.slider_right{
+.slider_right {
   width: auto;
   height: 640px;
   align-self: flex-end;
@@ -259,7 +258,6 @@
 }
 
 .main_logo {
-
 }
 
 .main_logo img {
@@ -336,7 +334,8 @@
   cursor: pointer;
 }
 
-.footer_logo img, .footer_logo2 img {
+.footer_logo img,
+.footer_logo2 img {
   width: 100%;
 }
 
@@ -544,7 +543,7 @@
 
 .popularButtonTransparent .buttonTransparent:hover {
   /* background: rgba(106, 27, 154, 0.3); */
-  background: rgba(138, 119, 83, 0.30);
+  background: rgba(138, 119, 83, 0.3);
   color: var(--color-white);
 }
 
@@ -734,7 +733,7 @@
 }
 
 .itemColorButton.active-color::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -3px;
   left: -3px;
@@ -976,6 +975,47 @@
   margin: 30px;
 }
 
+.partnerBlock {
+  display: flex;
+  justify-content: space-between;
+  /* width: 980px; */
+  width: var(--width-block);
+  height: 500px;
+  background: no-repeat;
+}
+
+.partnerBlockText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  width: 50%;
+}
+
+.partnerBlockComments {
+  display: flex;
+  gap: 24px;
+}
+
+.partnerBlockComment {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  width: 375px;
+  height: 285px;
+  border: 1px solid var(--color-brown);
+  padding: 30px;
+  gap: 12px;
+}
+
+.partnerBlockComment::-webkit-scrollbar {
+  width: 0;
+}
+
+.partnerBlockFAQ {
+}
+
 .aboutBlock {
   display: flex;
   flex-direction: row;
@@ -1034,7 +1074,7 @@
   justify-content: space-between;
   width: 1160px;
   gap: 8px;
-  padding: 0 90px 60px ;
+  padding: 0 90px 60px;
   border-bottom: 1px solid var(--color-brown);
 }
 
@@ -1071,7 +1111,7 @@
 .aboutBlock_img {
   display: flex;
   justify-content: center;
-  background: #D3D4CF;
+  background: #d3d4cf;
   width: 300px;
   height: 200px;
   position: relative;
@@ -1193,14 +1233,13 @@
 .basket_inputs {
   flex-wrap: wrap;
 }
-.basket_inputs label{
+.basket_inputs label {
   width: 380px;
 }
 
-
 /* ----------------- */
 
-.hiddenBlocks{
+.hiddenBlocks {
   display: none;
   flex-direction: column;
   gap: 10px;
@@ -1210,6 +1249,6 @@
   width: 100px;
 }
 
-.basketContentItemDelete{
+.basketContentItemDelete {
   cursor: pointer;
 }

@@ -210,53 +210,77 @@ $(".itemInfo").on("click", "#addToCartButton", function () {
 
 getData("item").then((response) => {
   let block = $(".popular_items_slider").empty();
-  let limit = 4;
+  let limit = 8;
 
   response.slice(0, limit).forEach((element) => {
 
     block.append(`  
-        <div class="popular_item">
-            <div class="popular_img">
-                <img src="admin/img/${
-                  stringToImageArray(element.img)[0]
-                }" alt="">
-                <a href="item.html?id_item=${
-                  element.id
-                }" class="popularButtonTransparent">
-                    <div class="buttonTransparent">быстрый просмотр</div>
-                </a>
-            </div>
-            <div class="description">
-                <div class="title10">
-                    ${element.tags}
-                </div>
-                <div class="title16 fw5">
-                    ${element.title}
-                </div>
-                <div class="price">
-                    <div class="title16 fw6">
-                        ${element.price} ₽
-                    </div>
-                    <div class="title16 fw4 discount">
-                        ${element.price_discount} ₽
-                    </div>
-                </div>
-                <div class="colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="58" height="12"
-                        viewBox="0 0 58 12" fill="none">
-                        <circle cx="6" cy="6" r="3.95" fill="#EDEDED" stroke="#C4C4C4"
-                            stroke-width="0.1" />
-                        <circle cx="6" cy="6" r="5.75" stroke="black" stroke-width="0.5" />
-                        <circle cx="22" cy="6" r="4" fill="#1B9311" />
-                        <circle cx="38" cy="6" r="4" fill="#4D0FD0" />
-                        <circle cx="54" cy="6" r="4" fill="black" />
-                    </svg>
-                </div>
-            </div>
-        </div>
+      <div class="popular_item">
+          <div class="popular_img">
+              <img src="admin/img/${
+                stringToImageArray(element.img)[0]
+              }" alt="">
+              <a href="item.html?id_item=${
+                element.id
+              }" class="popularButtonTransparent">
+                  <div class="buttonTransparent">быстрый просмотр</div>
+              </a>
+          </div>
+          <div class="description">
+              <div class="title10">
+                  ${element.tags}
+              </div>
+              <div class="title16 fw5">
+                  ${element.title}
+              </div>
+              <div class="price">
+                  <div class="title16 fw6">
+                      ${element.price} ₽
+                  </div>
+                  <div class="title16 fw4 discount">
+                      ${element.price_discount} ₽
+                  </div>
+              </div>
+              <div class="colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="58" height="12"
+                      viewBox="0 0 58 12" fill="none">
+                      <circle cx="6" cy="6" r="3.95" fill="#EDEDED" stroke="#C4C4C4"
+                          stroke-width="0.1" />
+                      <circle cx="6" cy="6" r="5.75" stroke="black" stroke-width="0.5" />
+                      <circle cx="22" cy="6" r="4" fill="#1B9311" />
+                      <circle cx="38" cy="6" r="4" fill="#4D0FD0" />
+                      <circle cx="54" cy="6" r="4" fill="black" />
+                  </svg>
+              </div>
+          </div>
+      </div>
       
     `);
   });
+
+  block.append(`
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+  `)
+
+  
+
 });
 
+getData("comment").then((response) => {
+  let block = $(".comment_swiper").empty();
+
+  response.forEach((element) => {
+    block.append(`
+    <div class="partnerBlockComment">
+      <div class="title24 fw5">
+          ${element.title}
+      </div>
+      <div class="title16 fw5">
+          ${element.text}
+      </div>
+    </div>
+    `)
+  })
+})
 
