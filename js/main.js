@@ -36,35 +36,35 @@ const popular_swiper = new Swiper(".popular_swiper", {
   },
 });
 
-const popular_items_swiper = new Swiper(".popular_items_slider", {
-  slidesPerView: 4,
-  // spaceBetween: 0,
-  slidesPerGroup: 1,
-  direction: "horizontal",
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
-});
+// const popular_items_swiper = new Swiper(".popular_items_slider", {
+//   slidesPerView: 4,
+//   // spaceBetween: 0,
+//   slidesPerGroup: 1,
+//   direction: "horizontal",
+//   loop: true,
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+//   scrollbar: {
+//     el: ".swiper-scrollbar",
+//   },
+// });
 
-const comment_swiper = new Swiper(".comment_swiper", {
-  slidesPerView: 3,
-  // spaceBetween: 0,
-  slidesPerGroup: 1,
-  direction: "horizontal",
-  loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
-});
+// const comment_swiper = new Swiper(".comment_swiper", {
+//   slidesPerView: 3,
+//   // spaceBetween: 0,
+//   slidesPerGroup: 1,
+//   direction: "horizontal",
+//   loop: true,
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+//   scrollbar: {
+//     el: ".swiper-scrollbar",
+//   },
+// });
 
 var dropdowns = document.querySelectorAll(".dropdown");
 var otherElements = document.querySelector(".other-elements");

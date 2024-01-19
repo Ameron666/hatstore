@@ -87,7 +87,7 @@ function getSchema()
                     'type' => 'hidden',
                     'data' => ["Хит продаж", "Скидка", "Новое"],
                     'selectOne' => false,
-                    'required' => true,
+                    'required' => false,
                 ],
 
                 'collection'=> [

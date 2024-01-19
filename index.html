@@ -76,10 +76,10 @@
                         <div class="swiper-slide">
                             <div class="slider_left" style="background-image: url(ref/main.png);">
                                 <div class="slider_left__inside">
-                                    <div class="title16 fw4 sliderTitle">
+                                    <div class="title16 fw4 sliderTitle white">
                                         коллекция осень-зима 2020
                                     </div>
-                                    <div class="title40 fw6 sliderTitle">
+                                    <div class="title40 fw6 sliderTitle white">
                                         готовьтесь
                                         к зиме с нами!
                                     </div>
@@ -114,9 +114,10 @@
 
         <section class="mainSection">
             <div class="mainBlock">
-                <input type="color" id="colorPicker">
+                <!-- <input type="color" id="colorPicker"> -->
+
                 <div class="catalogBlock">
-                   
+
                     <div class="catalog_item">
                         <div class="catalog_small_img">
                             <img src="ref/lips.png" alt="">
@@ -180,47 +181,40 @@
                 </div>
 
                 <div class="catalogBlock">
+
                     <div class="catalog_item">
-                        <div class="catalog_medium_img">
+                        <div class="catalog_medium_img_left">
                             <img src="ref/blond.png" alt="">
                         </div>
-                        <div class="catalog_left">
-
-                            <div class="title16 fw4 sliderTitle black">
+                        <div class="catalog_small">
+                            <div class="title16 fw4 sliderTitleSmall black">
                                 коллекция
                             </div>
-
-                            <div class="title40 fw6 sliderTitle black">
+                            <div class="title40 fw6 sliderTitleSmall black">
                                 осень—
                                 зима
                             </div>
-
                             <a href="catalog.html" class="catalog_ref">
-                                <div class="title18 fw6 sliderTitle white">Подробнее</div>
+                                <div class="title18 fw6 sliderTitleSmall white">Подробнее</div>
                             </a>
-
                         </div>
                     </div>
 
                     <div class="catalog_item">
-                        <div class="catalog_medium_img">
-                            <img src="ref/sea.png" alt="">
-                        </div>
-                        <div class="catalog_left">
-
-                            <div class="title16 fw4 sliderTitle black">
+                        <div class="catalog_small">
+                            <div class="title16 fw4 sliderTitleSmall black">
                                 коллекция
                             </div>
-
-                            <div class="title40 fw6 sliderTitle black">
+                            <div class="title40 fw6 sliderTitleSmall black">
                                 весна—
                                 лето
                             </div>
-
                             <a href="catalog.html" class="catalog_ref">
-                                <div class="title18 fw6 sliderTitle white">Подробнее</div>
+                                <div class="title18 fw6 sliderTitleSmall white">Подробнее</div>
                             </a>
-
+                        </div>
+                        <div class="catalog_medium_img_right">
+                            <img src="ref/sea.png" alt="">
                         </div>
                     </div>
 
@@ -239,28 +233,25 @@
                     <a href="catalog.html" class="brown title16 fw5">Показать все</a>
                 </div>
 
-                <div class="popular_items_slider">
-
-                </div>
+                <!-- <div class="popular_items_slider"> -->
 
                 <!-- Slider main container -->
-                <!-- <div class="popular_swiper">
-                    
+                <div class="popular_swiper">
+
                     <div class="swiper-wrapper popular_items_slider">
-                       
+
 
                     </div>
-                 
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
+                </div>
+                <!-- </div> -->
 
-
-                </div> -->
             </div>
         </section>
 
         <footer>
-            
+
             <!-- <section class="footerSection">
 
                 <div class="footer_copiryte">
@@ -332,7 +323,7 @@
                     </div>
                 </div>
             </section> -->
-        
+
         </footer>
     </main>
 
@@ -340,6 +331,9 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+    <script src="js/google-translate.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=TranslateInit"></script>
     <script src="js/header.js"></script>
     <script src="js/footer.js"></script>
     <script src="js/main.js"></script>

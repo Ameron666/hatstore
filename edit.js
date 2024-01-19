@@ -213,13 +213,12 @@ getData("item").then((response) => {
   let limit = 8;
 
   response.slice(0, limit).forEach((element) => {
+    block.append(`
 
-    block.append(`  
+     <div class="swiper-slide">
       <div class="popular_item">
           <div class="popular_img">
-              <img src="admin/img/${
-                stringToImageArray(element.img)[0]
-              }" alt="">
+              <img src="admin/img/${stringToImageArray(element.img)[0]}" alt="">
               <a href="item.html?id_item=${
                 element.id
               }" class="popularButtonTransparent">
@@ -254,33 +253,63 @@ getData("item").then((response) => {
               </div>
           </div>
       </div>
+    </div>
       
     `);
   });
 
-  block.append(`
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-  `)
+  const popular_items_swiper = new Swiper(".popular_items_slider", {
+    slidesPerView: 4,
+    // spaceBetween: 0,
+    slidesPerGroup: 1,
+    direction: "horizontal",
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    scrollbar: {
+      el: ".swiper-scrollbar",
+    },
+  });
 
-  
-
+  // block.append(`
+  //     <div class="swiper-button-prev"></div>
+  //     <div class="swiper-button-next"></div>
+  // `);
 });
 
 getData("comment").then((response) => {
-  let block = $(".comment_swiper").empty();
+  let block = $(".comment_swiper__wrapper").empty();
 
   response.forEach((element) => {
     block.append(`
-    <div class="partnerBlockComment">
-      <div class="title24 fw5">
-          ${element.title}
-      </div>
-      <div class="title16 fw5">
-          ${element.text}
+    <div class="swiper-slide">
+      <div class="partnerBlockComment">
+        <div class="title24 fw5">
+            ${element.title}
+        </div>
+        <div class="title16 fw5">
+            ${element.text}
+        </div>
       </div>
     </div>
-    `)
-  })
-})
+    `);
+  });
 
+  const comment_swiper = new Swiper(".comment_swiper", {
+    slidesPerView: 3,
+    // spaceBetween: 10,
+    slidesPerGroup: 1,
+    direction: "horizontal",
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    scrollbar: {
+      el: ".swiper-scrollbar",
+    },
+  });
+
+});
