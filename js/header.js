@@ -36,7 +36,7 @@ header.append(`
             <div class="header_login">
                 <!-- <a href="login.html"> -->
                 <a href="#">
-                    <div class="title16">Войти</div>
+                    <div class="title16">Авторизоваться</div>
                 </a>
             </div>
             <div class="language">

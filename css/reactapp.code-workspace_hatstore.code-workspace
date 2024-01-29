@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "../../../../Projects/reactapp"
+		},
+		{
+			"path": "../../../../Projects/Responsive-Image-Gallery-main"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "../../hairdressing-enter"
+		},
+		{
+			"path": "../../invest"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Responsive-Image-Gallery-main"
+	}
+}

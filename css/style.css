@@ -127,6 +127,11 @@
   gap: 10px;
   border-radius: 10px;
   background: var(--color-purple);
+/*  */
+  font-size: 14px;
+  justify-content: center;
+  width: 160px;
+  border: 1px solid var(--color-purple);
 }
 
 .buttonWhite {
@@ -516,7 +521,7 @@ footer {
 }
 
 .catalog_small {
-padding: 20px;
+  padding: 20px;
 }
 
 .catalog_left a,
