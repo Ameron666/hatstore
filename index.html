@@ -21,10 +21,9 @@
 </head>
 
 <body>
-    <main>
 
-        <header>
-            <!-- <section class="headerSection">
+    <header>
+        <!-- <section class="headerSection">
                 <a class="main_logo" href="/">
                     <div class="title24 purple fw6">SHAPKI</div>
                     <div class="title24 black fw3">STORE</div>
@@ -64,13 +63,15 @@
                     </div>
                 </div>
             </section> -->
-        </header>
+    </header>
+
+    <main>
 
         <section class="sliderSection">
             <div class="sliderBlock">
 
 
-                <div class="swiper">
+                <div class="swiper mainSlider">
                     <div class="swiper-wrapper">
 
                         <div class="swiper-slide">
@@ -102,10 +103,10 @@
 
                     </div>
 
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination mainSlider_pagination"></div>
 
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev mainSlider_prev"></div>
+                    <div class="swiper-button-next mainSlider_next"></div>
 
                 </div>
 
@@ -113,9 +114,8 @@
         </section>
 
         <section class="mainSection">
+            <!-- <input type="color" id="colorPicker"> -->
             <div class="mainBlock">
-                <!-- <input type="color" id="colorPicker"> -->
-
                 <div class="catalogBlock">
 
                     <div class="catalog_item">
@@ -194,7 +194,7 @@
                                 осень—
                                 зима
                             </div>
-                            <a href="catalog.html" class="catalog_ref">
+                            <a href="catalog.html?for=Осень-зима" class="catalog_ref">
                                 <div class="title18 fw6 sliderTitleSmall white">Подробнее</div>
                             </a>
                         </div>
@@ -219,8 +219,8 @@
                     </div>
 
                 </div>
-
             </div>
+
         </section>
 
         <section class="popularSection">
@@ -242,17 +242,18 @@
 
 
                     </div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
                 </div>
+                    <div class="swiper-button-prev popularSlider_prev"></div>
+                    <div class="swiper-button-next popularSlider_next"></div>
                 <!-- </div> -->
 
             </div>
         </section>
 
-        <footer>
+    </main>
 
-            <!-- <section class="footerSection">
+    <footer>
+        <!-- <section class="footerSection">
 
                 <div class="footer_copiryte">
                     <div class="main_logo">
@@ -323,9 +324,8 @@
                     </div>
                 </div>
             </section> -->
+    </footer>
 
-        </footer>
-    </main>
 
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

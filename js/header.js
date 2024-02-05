@@ -25,10 +25,10 @@ header.append(`
             <a href="catalog.html?for=Для детей">
                 <div class="title16">Детское</div>
             </a>
-            <a href="catalog.html">
+            <a href="catalog.html?for=Новое">
                 <div class="title16">Новинки</div>
             </a>
-            <a href="catalog.html">
+            <a href="catalog.html?for=Скидка">
                 <div class="title16 brown fw6">Скидки</div>
             </a>
         </div>

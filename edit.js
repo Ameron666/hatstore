@@ -27,6 +27,26 @@ function stringToImageArray(imageString) {
 function getFileExtension(filename) {
   return filename.slice(((filename.lastIndexOf(".") - 1) >>> 0) + 2);
 }
+// ----------------------------------------------------------------
+
+const colorsName = {
+  Красный: "red",
+  Оранжевый: "orange",
+  Желтый: "yellow",
+  Зелёный: "green",
+  Голубой: "cyan",
+  Синий: "blue",
+  Фиолетовый: "purple",
+  Чёрный: "black",
+  Белый: "white",
+  Серый: "gray",
+};
+
+const sorter = `
+  
+`;
+
+// ----------------------------------------------------------------
 
 var currentUrl = window.location.href;
 var urlSearchParams = new URLSearchParams(window.location.search);
@@ -42,57 +62,66 @@ getData("item").then((response) => {
   }
 
   response.sort(compareDates);
+  if (forValue) {
+    let block = $("#category_items").empty();
+    let sorterBlock = $(".dropdownCategoryBlock");
 
-  let block = $("#category_items").empty();
-  const maxCharacters = 100;
-  // console.log(response);
-  response.forEach((element) => {
-    if (element.for === forValue) {
-      $("#category_name").empty();
-      $("#category_name").append(element.for);
-      block.append(`
+    const maxCharacters = 100;
+    // console.log(response);
+    response.forEach((element) => {
+      let colors = element.color.split(", ");
+      if (
+        element.for === forValue ||
+        element.tags === forValue ||
+        element.collection === forValue
+      ) {
+        $("#category_name").empty();
+        // $("#category_name").append(element.for);
+        $("#category_name").append(forValue);
+        block.append(`
         <div class="popular_item">
-        <div class="popular_img">
+          <div class="popular_img">
             <img src="admin/img/${stringToImageArray(element.img)[0]}" alt="">
             <a href="item.html?id_item=${
               element.id
             }" class="popularButtonTransparent">
-                <div class="buttonTransparent">быстрый просмотр</div>
+              <div class="buttonTransparent">быстрый просмотр</div>
             </a>
-        </div>
-        <div class="description">
+          </div>
+          <div class="description">
             <div class="title10">
                 ${element.tags}
             </div>
-
             <div class="title16 fw5">
                 ${element.title}
             </div>
-
             <div class="price">
                 <div class="title16 fw6">
-                    ${element.price}
+                    ${element.price} ₽
                 </div>
                 <div class="title16 fw4 discount">
-                    ${element.price_discount}
+                    ${
+                      element.price_discount
+                        ? `${element.price_discount} ₽`
+                        : ""
+                    }
                 </div>
             </div>
-
             <div class="colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="58" height="12" viewBox="0 0 58 12"
-                    fill="none">
-                    <circle cx="6" cy="6" r="3.95" fill="#EDEDED" stroke="#C4C4C4" stroke-width="0.1" />
-                    <circle cx="6" cy="6" r="5.75" stroke="black" stroke-width="0.5" />
-                    <circle cx="22" cy="6" r="4" fill="#1B9311" />
-                    <circle cx="38" cy="6" r="4" fill="#4D0FD0" />
-                    <circle cx="54" cy="6" r="4" fill="black" />
-                </svg>
+                ${colors
+                  .map(
+                    (color, i) =>
+                      `<div class="colors_item" style="width:10px; height: 10px; background-color: ${colorsName[color]};"></div>`
+                  )
+                  .join("")} 
+
             </div>
+          </div>
         </div>
-    </div>
         `);
-    }
-  });
+      }
+    });
+  }
 });
 
 //item
@@ -120,27 +149,13 @@ if (id_item) {
             `);
     }
     let tags = response[11].split(", ");
-
     for (let i = 0; i < tags.length; i++) {
       $("#item_tags").append(`
                 <div class="itemTagButton">${tags[i]}</div>
             `);
     }
-
-    let colorsName = {
-      Фиолетовый: "purple",
-      Чёрный: "black",
-      Белый: "white",
-      Красный: "red",
-      Синий: "blue",
-      Зелёный: "green",
-      Оранжевый: "orange",
-      Голубой: "cyan",
-      Желтый: "yellow",
-      Серый: "gray",
-    };
-
     let colors = response[6].split(", ");
+    $("#item_color_name").html(colors[0]);
     for (let i = 0; i < colors.length; i++) {
       $("#item_color").append(`
                 <div class="itemColorButton" style="background-color: ${
@@ -148,7 +163,6 @@ if (id_item) {
                 };"></div>
             `);
     }
-
     let sizes = response[7].split(", ");
     for (let i = 0; i < sizes.length; i++) {
       $("#item_size").append(`
@@ -213,8 +227,9 @@ getData("item").then((response) => {
   let limit = 8;
 
   response.slice(0, limit).forEach((element) => {
-    block.append(`
+    let colors = element.color.split(", ");
 
+    block.append(`
      <div class="swiper-slide">
       <div class="popular_item">
           <div class="popular_img">
@@ -237,18 +252,28 @@ getData("item").then((response) => {
                       ${element.price} ₽
                   </div>
                   <div class="title16 fw4 discount">
-                      ${element.price_discount} ₽
+                      ${
+                        element.price_discount
+                          ? `${element.price_discount} ₽`
+                          : ""
+                      } 
                   </div>
               </div>
               <div class="colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="58" height="12"
-                      viewBox="0 0 58 12" fill="none">
-                      <circle cx="6" cy="6" r="3.95" fill="#EDEDED" stroke="#C4C4C4"
-                          stroke-width="0.1" />
-                      <circle cx="6" cy="6" r="5.75" stroke="black" stroke-width="0.5" />
-                      <circle cx="22" cy="6" r="4" fill="#1B9311" />
-                      <circle cx="38" cy="6" r="4" fill="#4D0FD0" />
-                      <circle cx="54" cy="6" r="4" fill="black" />
+                  <svg id="svg_colors_${
+                    element.id
+                  }" xmlns="http://www.w3.org/2000/svg" width="228" height="12"
+                      viewBox="0 0 228 12" fill="none">
+                      ${colors
+                        .map(
+                          (color, i) =>
+                            `<circle cx="${
+                              6 + i * 16
+                            }" cy="6" r="4" stroke="#1d1d1b"; stroke-width="1"; fill="${
+                              colorsName[color]
+                            }"/>`
+                        )
+                        .join("")}                      
                   </svg>
               </div>
           </div>
@@ -256,22 +281,25 @@ getData("item").then((response) => {
     </div>
       
     `);
+    // for (let i = 0; i < colors.length; i++) {
+    //   $(`#svg_colors_${element.id}`).append(`<circle cx="${(i+1)*8}" cy="6" r="4" fill="${colorsName[colors[i]]}" />`);
+    // }
   });
 
-  const popular_items_swiper = new Swiper(".popular_items_slider", {
-    slidesPerView: 4,
-    // spaceBetween: 0,
-    slidesPerGroup: 1,
-    direction: "horizontal",
-    loop: true,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    scrollbar: {
-      el: ".swiper-scrollbar",
-    },
-  });
+  // const popular_items_swiper = new Swiper(".popular_items_slider", {
+  //   slidesPerView: 4,
+  //   spaceBetween: 0,
+  //   slidesPerGroup: 1,
+  //   direction: "horizontal",
+  //   loop: true,
+  //   navigation: {
+  //     nextEl: ".swiper-button-next",
+  //     prevEl: ".swiper-button-prev",
+  //   },
+  //   scrollbar: {
+  //     el: ".swiper-scrollbar",
+  //   },
+  // });
 
   // block.append(`
   //     <div class="swiper-button-prev"></div>
@@ -311,5 +339,4 @@ getData("comment").then((response) => {
       el: ".swiper-scrollbar",
     },
   });
-
 });

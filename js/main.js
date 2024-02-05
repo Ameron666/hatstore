@@ -28,8 +28,10 @@ const popular_swiper = new Swiper(".popular_swiper", {
   direction: "horizontal",
   loop: true,
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: ".popularSlider_next",
+    prevEl: ".popularSlider_prev",
+    // nextEl: ".swiper-button-next",
+    // prevEl: ".swiper-button-prev",
   },
   scrollbar: {
     el: ".swiper-scrollbar",
@@ -66,8 +68,10 @@ const popular_swiper = new Swiper(".popular_swiper", {
 //   },
 // });
 
+// navigation drops
+
 var dropdowns = document.querySelectorAll(".dropdown");
-var otherElements = document.querySelector(".other-elements");
+// var otherElements = document.querySelector(".other-elements");
 
 dropdowns.forEach(function (dropdown) {
   var button = dropdown.querySelector(".dropbtn");
@@ -76,9 +80,9 @@ dropdowns.forEach(function (dropdown) {
   button.addEventListener("click", function () {
     content.classList.toggle("show");
     if (content.classList.contains("show")) {
-      otherElements.style.marginTop = content.clientHeight + "px";
+      // otherElements.style.marginTop = content.clientHeight + "px";
     } else {
-      otherElements.style.marginTop = "0";
+      // otherElements.style.marginTop = "0";
     }
   });
 
@@ -88,10 +92,60 @@ dropdowns.forEach(function (dropdown) {
       !event.target.closest(".dropdown")
     ) {
       content.classList.remove("show");
-      otherElements.style.marginTop = "0";
+      // otherElements.style.marginTop = "0";
     }
   });
 });
+
+// navigation drops
+
+// category drops
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdownCategories = document.querySelectorAll(".dropdownCategory");
+  const sorterBlock = document.getElementById("sorterBlock");
+  const selectedOptions = {};
+
+  dropdownCategories.forEach((category) => {
+    const dropdownBtn = category.querySelector(".dropbtnCategory");
+    const dropdownContent = category.querySelector(".dropdownCategoryContent");
+    const resetOption = category.querySelector(".resetOption");
+    const categoryData = category.getAttribute("data-category");
+
+    dropdownBtn.addEventListener("click", function () {
+      dropdownContent.style.display =
+        dropdownContent.style.display === "none" ? "block" : "none";
+    });
+
+    dropdownContent.addEventListener("click", function (event) {
+      if (event.target.tagName === "LI") {
+        const selectedSort = event.target.getAttribute("data-sort");
+        selectedOptions[categoryData] = selectedSort;
+        updateSorterBlock();
+        dropdownContent.style.display = "none";
+      }
+    });
+
+    resetOption.addEventListener("click", function () {
+      delete selectedOptions[categoryData];
+      updateSorterBlock();
+      dropdownContent.style.display = "none";
+    });
+
+    document.addEventListener("click", function (event) {
+      if (!category.contains(event.target)) {
+        dropdownContent.style.display = "none";
+      }
+    });
+  });
+
+  function updateSorterBlock() {
+    const sorterText = Object.values(selectedOptions).join(" + ") || "";
+    sorterBlock.textContent = sorterText;
+  }
+});
+
+// category drops
 
 function changeImage(newImagePath) {
   var largeImage = document.getElementById("item_big_img");
@@ -259,7 +313,6 @@ document.addEventListener("DOMContentLoaded", function () {
       ".basketContentItemCountDecrease"
     );
 
-
     var contentBlock = block.querySelector(".basketContentItemCountValue");
     var priceForCounting = block.querySelector(".priceForCounting");
     var basketContentItemPrice = block.querySelector(
@@ -271,7 +324,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       var myArray = JSON.parse(localStorage.getItem(tovar_id));
 
-      changeButtonMin.style.pointerEvents = 'auto';
+      changeButtonMin.style.pointerEvents = "auto";
       contentBlock.innerHTML++;
 
       myArray[5] = contentBlock.innerHTML;
@@ -305,7 +358,7 @@ document.addEventListener("DOMContentLoaded", function () {
       localStorage.setItem(tovar_id, JSON.stringify(myArray));
 
       if (contentBlock.innerHTML == 0) {
-        changeButtonMin.style.pointerEvents = 'none';
+        changeButtonMin.style.pointerEvents = "none";
       }
 
       let needPrice = contentBlock.innerHTML * basketContentItemPrice.innerHTML;
@@ -399,8 +452,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   $(".basketPriceButton").click(function () {
     let block = $(".basketContentItem");
-
-  })
+  });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -413,8 +465,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   $("#fullPriceOnPage").html(sum);
 });
-
-
 
 let massToSend = [];
 massToSend.push(getFromLocalStorage());
@@ -434,35 +484,35 @@ console.log(massToSend);
 // console.log('Товар 2:');
 // console.log('Наименование: ' + massToSend[0][1][1] + ' цвет: ' + massToSend[0][1][3] + ' размер: ' + massToSend[0][1][4] + ' Количество: ' + massToSend[0][1][5] + ' Цена: ' + massToSend[0][1][2]);
 
-$(document).ready(function() {
-  $('#myForm').submit(function(event) {
+$(document).ready(function () {
+  $("#myForm").submit(function (event) {
     event.preventDefault();
-var form = [];
+    var form = [];
     var formData = $(this).serializeArray();
-    formData.forEach(function(data){
+    formData.forEach(function (data) {
       form.push(data.value);
-    })
+    });
     massForm.push(form);
   });
 });
 
-$(document).ready(function() {
+$(document).ready(function () {
   // Создаем массив для хранения сообщений о товарах
   var orderMessages = [];
 
-  $('#myForm').submit(function(event) {
+  $("#myForm").submit(function (event) {
     event.preventDefault();
     var form = [];
     var formData = $(this).serializeArray();
-    formData.forEach(function(data) {
+    formData.forEach(function (data) {
       form.push(data.value);
     });
     massForm.push(form);
 
     // Создаем сообщения о товарах и добавляем их в массив
-    var orderMessage = 'Заказ:';
+    var orderMessage = "Заказ:";
 
-    massForm[0].forEach(function(item, index) {
+    massForm[0].forEach(function (item, index) {
       orderMessage += `\nТовар ${index + 1}:`;
       orderMessage += `\nНаименование: ${item[1]} цвет: ${item[3]} размер: ${item[4]} Количество: ${item[5]} Цена: ${item[2]}`;
     });
@@ -472,22 +522,17 @@ $(document).ready(function() {
   });
 
   // Пример: Вывод массива сообщений в консоль
-  $('#showMessages').click(function() {
+  $("#showMessages").click(function () {
     console.log(orderMessages);
   });
 });
 
-
 // ------------------------------------------------------------------------------------------------
 
-
-document.getElementById('colorPicker').addEventListener('change', function() {
+document.getElementById("colorPicker").addEventListener("change", function () {
   let selectedColor = this.value;
   let colorDiv = document.createElement("div");
   colorDiv.className = "itemColorButton";
   colorDiv.style.backgroundColor = selectedColor;
   document.getElementById("item_color").appendChild(colorDiv);
 });
-
-
-

@@ -14,6 +14,15 @@
 		},
 		{
 			"path": "../../invest"
+		},
+		{
+			"path": "../../depv2"
+		},
+		{
+			"path": "../../tsmit"
+		},
+		{
+			"path": "../../nationalCostumes"
 		}
 	],
 	"settings": {

@@ -22,17 +22,28 @@
 
 <body>
 
+    <header></header>
     <main>
-        <header></header>
+
         <section class="categorySection">
 
-
             <div class="leftNavMenu">
+
+                <div class="breadcrumbs">
+                    <a href="/">Главная</a> &frasl;
+                    <a href="/catalog.html">Каталог</a> &frasl;
+                    <span class="current-page">1</span>
+                </div>
+
                 <div class="dropdown" id="dropdown1">
 
-                    <div class="dropbtn title16 fw5">Женская коллекция</div>
+                    <div class="dropbtn title16 fw5">Женская коллекция
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5" fill="none">
+                            <path d="M1 1L5 4.03516L9 1" stroke="black" />
+                        </svg>
+                    </div>
                     <div class="dropdown-content">
-                        <a href="#">Показать все</a>
+                        <a href="catalog.html?for=Для неё">Показать все</a>
                         <a href="#">Осень-Зима 2020/21</a>
                         <a href="#">Весна-Лето 2020</a>
                         <a href="#">Шапки</a>
@@ -41,26 +52,34 @@
                 </div>
 
                 <div class="dropdown" id="dropdown2">
-                    <div class="dropbtn title16 fw5">Мужская коллекция</div>
+                    <div class="dropbtn title16 fw5">Мужская коллекция
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5" fill="none">
+                            <path d="M1 1L5 4.03516L9 1" stroke="black" />
+                        </svg>
+                    </div>
                     <div class="dropdown-content">
-                        <a href="#">Ссылка 4</a>
+                        <a href="catalog.html?for=Для него">Показать все</a>
                         <a href="#">Ссылка 5</a>
                         <a href="#">Ссылка 6</a>
                     </div>
                 </div>
 
-                <div class="dropdown" id="dropdown2">
-                    <div class="dropbtn title16 fw5">Детская коллекция</div>
+                <div class="dropdown" id="dropdown3">
+                    <div class="dropbtn title16 fw5">Детская коллекция
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5" fill="none">
+                            <path d="M1 1L5 4.03516L9 1" stroke="black" />
+                        </svg>
+                    </div>
                     <div class="dropdown-content">
-                        <a href="#">Ссылка 4</a>
+                        <a href="catalog.html?for=Для детей">Показать все</a>
                         <a href="#">Ссылка 5</a>
                         <a href="#">Ссылка 6</a>
                     </div>
                 </div>
 
-                <a href="" class="dropbtn title16 fw5">Новинки</a>
+                <a href="catalog.html?for=Новое" class="dropbtn title16 fw5">Новинки</a>
 
-                <a href="" class="dropbtn title16 fw5">Скидки</a>
+                <a href="catalog.html?for=Скидка" class="dropbtn title16 fw5">Скидки</a>
 
 
             </div>
@@ -68,12 +87,171 @@
 
             <section class="itemsSection">
 
-                <div class="title24 fw6 up" id="category_name">женская коллекция</div>
+                <div class="title24 fw6 up" id="category_name"> </div>
+
+                <div class="sorterBlock" id="sorterBlock"></div>
+
+                <div class="dropdownCategoryBlock">
+                    <div class="dropdownCategory" data-category="category1">
+                        <div class="dropbtnCategory">Сортировать
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5"
+                                fill="none">
+                                <path d="M1 1L5 4.03516L9 1" stroke="black" />
+                            </svg>
+                        </div>
+                        <div class="dropdownCategoryContent">
+                            <div class="resetOption" data-category="category1">Сбросить</div>
+                            <ul id="sort_by_type">
+                                <li data-sort="0">Категория 0</li>
+                                <li data-sort="1">Категория 1</li>
+                                <li data-sort="2">Категория 2</li>
+                                <li data-sort="3">Категория 3</li>
+                                <li data-sort="4">Категория 4</li>
+                                <li data-sort="5">Категория 5</li>
+                                <li data-sort="6">Категория 6</li>
+                                <li data-sort="7">Категория 7</li>
+                                <li data-sort="8">Категория 8</li>
+                                <li data-sort="9">Категория 9</li>
+                                <li data-sort="10">Категория 10</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="dropdownCategory" data-category="category2">
+                        <div class="dropbtnCategory">Цвет
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5"
+                                fill="none">
+                                <path d="M1 1L5 4.03516L9 1" stroke="black" />
+                            </svg>
+                        </div>
+                        <div class="dropdownCategoryContent">
+                            <div class="resetOption" data-category="category2">Сбросить</div>
+                            <ul id="sort_by_color">
+                                <li data-sort="a">Категория A</li>
+                                <li data-sort="b">Категория B</li>
+                                <li data-sort="c">Категория C</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="dropdownCategory" data-category="category3">
+                        <div class="dropbtnCategory">Материал
+                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="5" viewBox="0 0 10 5"
+                                fill="none">
+                                <path d="M1 1L5 4.03516L9 1" stroke="black" />
+                            </svg>
+                        </div>
+                        <div class="dropdownCategoryContent">
+                            <div class="resetOption" data-category="category3">Сбросить</div>
+                            <ul id="sort_by_material">
+                                <li data-sort="x">Категория X</li>
+                                <li data-sort="y">Категория Y</li>
+                                <li data-sort="z">Категория Z</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="itemsBlock" id="category_items">
 
-<!--                     
-                    <div class="popular_item">
+                    <div class="mainBlock">
+
+                        <div class="catalogBlock">
+                            <div class="catalog_item">
+                                <div class="catalog_small_img">
+                                    <img src="ref/lips.png" alt="">
+                                </div>
+                                <a href="" class="catalogButton">
+                                    <div class="buttonWhite title16 fw4">для неё</div>
+                                </a>
+                                <a href="catalog.html?for=Для неё" class="catalogButtonTransparent">
+                                    <div class="buttonTransparent">Смотреть</div>
+                                </a>
+                            </div>
+                            <div class="catalog_item">
+                                <div class="catalog_small_img">
+                                    <img src="ref/man.png" alt="">
+                                </div>
+                                <a href="" class="catalogButton">
+                                    <div class="buttonWhite title16 fw4">для него</div>
+                                </a>
+                                <a href="catalog.html?for=Для него" class="catalogButtonTransparent">
+                                    <div class="buttonTransparent">Смотреть</div>
+                                </a>
+                            </div>
+                            <div class="catalog_item">
+                                <div class="catalog_small_img">
+                                    <img src="ref/child.png" alt="">
+                                </div>
+                                <a href="" class="catalogButton">
+                                    <div class="buttonWhite title16 fw4">для детей</div>
+                                </a>
+                                <a href="catalog.html?for=Для детей" class="catalogButtonTransparent">
+                                    <div class="buttonTransparent">Смотреть</div>
+                                </a>
+                            </div>
+                        </div>
+                        <!--                         
+                        <div class="catalogBlock">
+                            <div class="catalog_item">
+                                <div class="catalog_big_img">
+                                    <img src="ref/red.jpg" alt="">
+                                </div>
+                                <div class="catalog_left">
+                                    <div class="title16 fw4 sliderTitle white">
+                                        новинки сезона
+                                    </div>
+                                    <div class="title40 fw6 sliderTitle white">
+                                        зимой теплее
+                                        с нами!
+                                    </div>
+                                    <a href="catalog.html" class="catalog_ref">
+                                        <div class="title18 fw6 sliderTitle white">Подробнее</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    -->
+                        <div class="catalogBlock">
+                            <div class="catalog_item">
+                                <div class="catalog_medium_img_left">
+                                    <img src="ref/blond.png" alt="">
+                                </div>
+                                <div class="catalog_small">
+                                    <div class="title16 fw4 sliderTitleSmall black">
+                                        коллекция
+                                    </div>
+                                    <div class="title40 fw6 sliderTitleSmall black">
+                                        осень—
+                                        зима
+                                    </div>
+                                    <a href="catalog.html?for=Осень-зима" class="catalog_ref">
+                                        <div class="title18 fw6 sliderTitleSmall white">Подробнее</div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="catalog_item">
+                                <div class="catalog_small">
+                                    <div class="title16 fw4 sliderTitleSmall black">
+                                        коллекция
+                                    </div>
+                                    <div class="title40 fw6 sliderTitleSmall black">
+                                        весна—
+                                        лето
+                                    </div>
+                                    <a href="catalog.html" class="catalog_ref">
+                                        <div class="title18 fw6 sliderTitleSmall white">Подробнее</div>
+                                    </a>
+                                </div>
+                                <div class="catalog_medium_img_right">
+                                    <img src="ref/sea.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!--<div class="popular_item">
                         <div class="popular_img">
                             <img src="ref/8467496bda7c7c5310f3cd56b1addb72.png" alt="">
                             <a href="" class="popularButtonTransparent">
@@ -368,7 +546,8 @@
                                 </svg>
                             </div>
                         </div>
-                    </div> -->
+                    </div> 
+                -->
 
                 </div>
 
@@ -376,8 +555,8 @@
         </section>
 
 
-        <footer></footer>
     </main>
+    <footer></footer>
 
 
 
